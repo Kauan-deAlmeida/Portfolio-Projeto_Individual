@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.heat{
+    background-image: url(img/olho-azul-olhando-para-fora-da-mistura-diversificada-de-tintas-conceito-de-visao-de-arte-close-up-generative-ai_116317-28855.avif);
+    background-repeat: no-repeat;
+    background-position: auto;
+    background-size: cover;
+    background-position-y: center;
+    width: 100%;
+    height: 50vw;
+}
+
+.header{
+    width: 100%;
+    position: fixed;
+    color: #fff;
+    top: 0%;
+    transition: all .3s ease-in-out;
+}
+
+.header .containt{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    z-index: 2;
+}
+
+.header .containt ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    font-size: 20px;
+}
+
+.header .containt li{
+    border-left: solid 1px #fff;
+    border-right: solid 1px #fff;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.header .containt li:hover{
+    color: #e6dede;
+    background-color: blue;
+    opacity: 0.8;
+    border-radius: 20px;
+}
+
+.header .containt select{
+    border-radius: 20px;
+    text-align: center;
+    width: 120px;
+    height: 30px;
+    background-color: blue;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.header .containt select:hover{
+    background-color: rgb(3, 3, 181);
+}
