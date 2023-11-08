@@ -7,9 +7,9 @@
 .heat{
     background-image: url(img/olho-azul-olhando-para-fora-da-mistura-diversificada-de-tintas-conceito-de-visao-de-arte-close-up-generative-ai_116317-28855.avif);
     background-repeat: no-repeat;
-    background-position: auto;
-    background-size: cover;
-    background-position-y: center;
+    background-position: 10%;
+    background-size: cover;   
+    background-attachment: fixed;
     width: 100%;
     height: 50vw;
     color: #fff;
@@ -27,9 +27,8 @@
 }
 
 .header.active{
-    background-color: #000;
+    background-color: #000000aa;
     box-shadow: 0px 0px 10px black;
-    opacity: 0.5; 
 }
 
 .header .containt{
@@ -38,7 +37,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 75px;
+    height: 70px;
     z-index: 2;
 }
 
@@ -60,8 +59,8 @@
 
 .header .containt li:hover{
     color: #e6dede;
-    background-color: blue;
-    opacity: 0.8;
+    background-color: teal;
+    
     border-radius: 20px;
 }
 
@@ -70,7 +69,7 @@
     text-align: center;
     width: 120px;
     height: 30px;
-    background-color: blue;
+    background-color: teal;
     color: #fff;
     font-size: 18px;
     cursor: pointer;
@@ -78,20 +77,142 @@
 }
 
 .header .containt select:hover{
-    background-color: rgb(3, 3, 181);
+    background-color: rgb(21, 85, 85);
 }
 
-.gradientBanner{
+.heat .gradientBanner{
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 83%, rgba(13,13,13,1) 100%);
     width: 100%;
     height: 100%;
 }  
 
-.banner{
+.heat .gradientBanner .banner{
     font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 700px;   
+}
+
+.divisoriaBanner{
+    background-color: teal;
+    width: 100%;
+    height: 100px;    
+}
+
+.social{
+    background-image: url(img/Top\ 5\ signos\ mais\ criativos\ do\ zodíaco.jfif);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: auto;
+    background-size: cover;   
+    width: 100%;
+    height: 50vw;
+    color: #fff;
+    z-index: 2;
+}
+
+.social .gradientBanner{
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 83%, rgba(13,13,13,0.2) 100%);
+    width: 100%;
     height: 100%;
+}
+
+.social .boxes{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+
+.boxes .boxCardOne{
+    background-image: url(img/download.jfif);
+    background-position: center;
+    background-size: cover;
+    width: 320px;
+    height: 530px;
+    border: solid 2px #fff;
+    border-radius: 30px;
+    margin-top: 150px;
+    transition: 1s;
+}
+
+.boxes .boxCardTwo{
+    background-image: url(img/Demon\ Slayer\ Mobile\ Wallpaper.jfif);
+    background-position-y: center;
+    background-position: center;
+    background-size: cover;
+    margin-left: 60px;
+    width: 320px;
+    height: 530px;
+    border: solid 2px #fff;
+    border-radius: 30px;
+    margin-top: 150px;
+    transition: 1s;
+}
+.boxes .boxCardTree{
+    background-image: url(img/bobby\ rebholz-\ my\ mentor\ and\ my\ idol.jfif);
+    background-position: center;
+    background-size: cover;
+    margin-left: 60px;
+    width: 320px;
+    height: 530px;
+    border: solid 2px #fff;
+    border-radius: 30px;
+    margin-top: 150px;
+    transition: 1s;
+}
+
+.boxCardOne:hover{
+    width: 360px;
+    height: 630px;
+}
+
+.boxCardTwo:hover{
+    width: 360px;
+    height: 630px;
+}
+
+.boxCardTree:hover{
+    width: 360px;
+    height: 630px;
+}
+
+.boxes .gradientBox{
+    border-radius: 30px;
+    background-color: #101010aa;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.gradientBox p{
+    padding: 0 15px 30px 15px;
+    font-size: 20px;
+}
+
+.gradientBox h2{
+    padding: 0 15px 30px 15px;
+}
+
+.descNavbarHeader, .descNavbarBanner, .descNavbarSocial{
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 40vw;
+}
+
+.descNavbarHeader {
+    background-image: url(img/download.jfif);
+}
+.descNavbarBanner {
+    background-image: url(img/Demon\ Slayer\ Mobile\ Wallpaper.jfif);
+}
+.descNavbarSocial {
+    background-image: url(img/bobby\ rebholz-\ my\ mentor\ and\ my\ idol.jfif);
 }
