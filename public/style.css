@@ -102,18 +102,18 @@
 }
 
 .social{
-    background-image: url(img/Top\ 5\ signos\ mais\ criativos\ do\ zodíaco.jfif);
-    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: auto;
     background-size: cover;   
     width: 100%;
-    height: 50vw;
+    height: 100vw;
     color: #fff;
     z-index: 2;
+    box-shadow: 50px 0px 0px 0px #000;
+    
 }
 
-.social .gradientBanner{
+.social .boxes .gradientBanner{
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 83%, rgba(13,13,13,0.2) 100%);
     width: 100%;
     height: 100%;
@@ -123,6 +123,18 @@
     display: flex;
     justify-content: center;
     align-items: center; 
+    background-image: url(img/4401316-vector-seamless-pattern-of-black-and-white-stationery-office-or-school-supplies-repeat-background-with-isolated-monocromatico-caneta-lapis-regua-cola-.jpg);
+    height: 45vw;
+}
+
+.boxes .boxesShadow{
+    width: 80%;
+    height: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #000000aa;
+    border-radius: 30px;
 }
 
 
@@ -135,7 +147,6 @@
     height: 530px;
     border: solid 2px #fff;
     border-radius: 30px;
-    margin-top: 150px;
     transition: 1s;
 }
 
@@ -149,7 +160,6 @@
     height: 530px;
     border: solid 2px #fff;
     border-radius: 30px;
-    margin-top: 150px;
     transition: 1s;
 }
 .boxes .boxCardTree{
@@ -161,7 +171,6 @@
     height: 530px;
     border: solid 2px #fff;
     border-radius: 30px;
-    margin-top: 150px;
     transition: 1s;
 }
 
@@ -203,16 +212,7 @@
 .descNavbarHeader, .descNavbarBanner, .descNavbarSocial{
     background-position: center;
     background-size: cover;
-    width: 100%;
+    max-width: 100%;
     height: 40vw;
 }
 
-.descNavbarHeader {
-    background-image: url(img/download.jfif);
-}
-.descNavbarBanner {
-    background-image: url(img/Demon\ Slayer\ Mobile\ Wallpaper.jfif);
-}
-.descNavbarSocial {
-    background-image: url(img/bobby\ rebholz-\ my\ mentor\ and\ my\ idol.jfif);
-}
