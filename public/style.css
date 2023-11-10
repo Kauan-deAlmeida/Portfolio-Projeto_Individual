@@ -4,14 +4,18 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+body{
+    background-color: #303030;
+}
+
 .heat{
     background-image: url(img/olho-azul-olhando-para-fora-da-mistura-diversificada-de-tintas-conceito-de-visao-de-arte-close-up-generative-ai_116317-28855.avif);
     background-repeat: no-repeat;
-    background-position: 10%;
+    background-position: center;
     background-size: cover;   
     background-attachment: fixed;
     width: 100%;
-    height: 50vw;
+    height: 45vw;
     color: #fff;
 }
 
@@ -31,7 +35,7 @@
     box-shadow: 0px 0px 10px black;
 }
 
-.header .containt{
+.header .container{
     width: 80%;
     margin: auto;
     display: flex;
@@ -41,7 +45,7 @@
     z-index: 2;
 }
 
-.header .containt ul{
+.header .container ul{
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -49,7 +53,7 @@
     font-size: 20px;
 }
 
-.header .containt li{
+.header .container li{
     border-left: solid 1px #fff;
     border-right: solid 1px #fff;
     padding: 0 10px 0 10px;
@@ -57,14 +61,14 @@
     transition: 0.5s;
 }
 
-.header .containt li:hover{
+.header .container li:hover{
     color: #e6dede;
     background-color: teal;
     
     border-radius: 20px;
 }
 
-.header .containt select{
+.header .container select{
     border-radius: 20px;
     text-align: center;
     width: 120px;
@@ -76,7 +80,7 @@
     transition: 0.3s;
 }
 
-.header .containt select:hover{
+.header .container select:hover{
     background-color: rgb(21, 85, 85);
 }
 
@@ -86,7 +90,7 @@
     height: 100%;
 }  
 
-.heat .gradientBanner .banner{
+.heat .gradientBanner .bannerInHeader{
     font-size: 25px;
     display: flex;
     justify-content: center;
@@ -95,124 +99,49 @@
     height: 700px;   
 }
 
-.divisoriaBanner{
-    background-color: teal;
+.banner{
     width: 100%;
-    height: 100px;    
-}
-
-.social{
-    background-repeat: no-repeat;
-    background-position: auto;
-    background-size: cover;   
-    width: 100%;
-    height: 100vw;
-    color: #fff;
-    z-index: 2;
-    box-shadow: 50px 0px 0px 0px #000;
-    
-}
-
-.social .boxes .gradientBanner{
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 83%, rgba(13,13,13,0.2) 100%);
-    width: 100%;
-    height: 100%;
-}
-
-.social .boxes{
+    height: 700px;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    background-image: url(img/4401316-vector-seamless-pattern-of-black-and-white-stationery-office-or-school-supplies-repeat-background-with-isolated-monocromatico-caneta-lapis-regua-cola-.jpg);
-    height: 45vw;
 }
 
-.boxes .boxesShadow{
-    width: 80%;
-    height: 40vw;
+.banner .container{
+    width: 50%;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    background-color: #000000aa;
-    border-radius: 30px;
+    margin-top: 50px;
+    margin-left: 150px;
 }
 
-
-
-.boxes .boxCardOne{
-    background-image: url(img/download.jfif);
-    background-position: center;
-    background-size: cover;
-    width: 320px;
-    height: 530px;
-    border: solid 2px #fff;
-    border-radius: 30px;
-    transition: 1s;
+.banner .container .content{
+    width: 60%;
+    height: 420px;
+    margin-top: 50px;
+    margin-left: -220px;
+    border-radius: 50px;
+    padding: 90px 30px 0px 30px;
+    opacity: 0.5;
+    background-color: #fff;
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 15%, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 15%, 100% 80%, 0 100%);
 }
 
-.boxes .boxCardTwo{
-    background-image: url(img/Demon\ Slayer\ Mobile\ Wallpaper.jfif);
-    background-position-y: center;
-    background-position: center;
-    background-size: cover;
-    margin-left: 60px;
-    width: 320px;
-    height: 530px;
-    border: solid 2px #fff;
-    border-radius: 30px;
-    transition: 1s;
-}
-.boxes .boxCardTree{
-    background-image: url(img/bobby\ rebholz-\ my\ mentor\ and\ my\ idol.jfif);
-    background-position: center;
-    background-size: cover;
-    margin-left: 60px;
-    width: 320px;
-    height: 530px;
-    border: solid 2px #fff;
-    border-radius: 30px;
-    transition: 1s;
+.banner .container .contentCard img{
+    width: 25%;
+    height: 520px;
+    border-radius: 20px;    
+    position: absolute;
+    opacity: 0.5;
+    margin-left: 300px;
+    box-shadow: #000 40px 40px 10px;
 }
 
-.boxCardOne:hover{
-    width: 360px;
-    height: 630px;
+.banner .contanier h2{
+    text-align: center;
 }
 
-.boxCardTwo:hover{
-    width: 360px;
-    height: 630px;
+.banner .container p{
+    text-align: justify;
 }
-
-.boxCardTree:hover{
-    width: 360px;
-    height: 630px;
-}
-
-.boxes .gradientBox{
-    border-radius: 30px;
-    background-color: #101010aa;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    justify-content: end;
-}
-
-.gradientBox p{
-    padding: 0 15px 30px 15px;
-    font-size: 20px;
-}
-
-.gradientBox h2{
-    padding: 0 15px 30px 15px;
-}
-
-.descNavbarHeader, .descNavbarBanner, .descNavbarSocial{
-    background-position: center;
-    background-size: cover;
-    max-width: 100%;
-    height: 40vw;
-}
-
