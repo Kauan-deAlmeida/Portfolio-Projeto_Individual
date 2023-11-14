@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: rgb(18, 18, 66);
+    background: linear-gradient(90deg, rgba(19,48,96,1) 0%, rgba(79,37,118,1) 25%, rgba(119,11,114,1) 68%, rgba(69,4,63,1) 100%);
 }
 
 .heat{
@@ -24,6 +24,7 @@ body{
     position: fixed;
     top: 0%;
     transition: all .3s ease-in-out;
+    z-index: 3;
 }
 
 .header::after{
@@ -42,7 +43,6 @@ body{
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    z-index: 2;
 }
 
 .header .container ul{
@@ -202,10 +202,11 @@ body{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border-radius: 30px;
+    border: solid 2px #fff;
 }
 
 #planoHQ{
-    background-image: url(img/batman.png);
+    background-image: url(img/718c8067f72919fcf64be2a0f223c21f.jpg);
 }
 
 #planoAnime{
@@ -247,24 +248,110 @@ body{
     width: 80%;
 }
 
-.explanation .exemplos .content{
-    margin-top: 100px;
-    height: 500px;
+.explanation .exemplos .descricaoCurso{
     display: flex;
     justify-content: space-evenly;
+    margin-top: 25px;
+}
+
+
+.explanation .exemplos .descricaoCurso .descricaoCursoTexto{
+    width: 50%;
+}
+
+.explanation .exemplos .descricaoCurso .descricaoCursoTexto h1{
+    font-size: 40px;
+    color:#fff;
+}
+
+.explanation .exemplos .descricaoCurso .descricaoCursoTexto h2{
+    text-align: justify;
+    list-style: none;
+}
+
+.explanation .exemplos .descricaoCurso img{
+    width: 300px;
+    height: 400px;
+    border-radius: 30px;
+}
+
+.explanation .exemplos .content{
+    margin-top: 100px;
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -100px;
+}
+
+.animationImg{
+    background-image: url(img/olho-azul-olhando-para-fora-da-mistura-diversificada-de-tintas-conceito-de-visao-de-arte-close-up-generative-ai_116317-28855.avif);
+}
+.animeImg{
+    background-image: url(img/e7a445a729176a80acfb9368b34a799f.jpg);
+}
+
+.anatomiaImgMao{
+    background-image: url(img/1cfe8290cece8a22f81b9bdc6521fd47.jpg);
+}
+
+.cartoonImg{
+    background-image: url(img/c7463efcaa9a3c136cfdd0b8a9f1800f.jpg);
+}
+
+.anatomiaImgPerna{
+    background-image: url(img/7276d9d2162612ffdaf93262b214cdb2.jpg);
+}
+
+.explanation .exemplos .boxLeft{
+    display: flex;
+    justify-content: end;
     align-items: center;   
-    background-color: #303030;
-    padding: 20px;
+}
+
+.explanation .exemplos .boxRight{
+    display: flex;
+    justify-content: start;
+    align-items: center;   
+    padding-left: 30px;  
+}
+
+.exemplos .boxLeft img{
+    width: 230px;
+    height: 300px;
     border-radius: 30px;
 }
 
 .exemplos .content img{
-    width: 300px;
-    height: 420px;
+    width: 200px;
+    height: 300px;
+    border-radius: 30px;
 }
 
-.exemplos .content h2{
-    width: 50%;
+.exemplos .content h1{
+    color:#303030;
+}
+
+.exemplos .content p{
+    color: #fff;
+    text-align: justify;
+}
+
+.boxDescribe{
+    width: 600px;
+    height: 350px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255,250,242,0.43);
+    backdrop-filter: blur(6px);
+    border-radius: 30px;
+    transition: 0.7s;
+}
+
+.boxDescribe:hover{
+    width: 750px;
+    
 }
 
 .describe{
@@ -276,4 +363,28 @@ body{
 
 .content .describe h2{
     text-align: justify;
+}
+
+.finalizandoConteudo{
+    background-image: url(img/FDD-Piratinha-Formas-Básicas-scaled.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 400px;
+    opacity: 0.8;
+    margin-top: 50px;
+}
+
+.aboutMeAll{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.aboutMe{
+    width: 80%;
+    height: auto; 
 }
