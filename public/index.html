@@ -13,19 +13,18 @@
             <div class="header">
                 <div class="container">
                     <h1>TeamArt</h1>
+                        <ul>
+                            <li>Home</li>
+                            <li>Cursos</li>
+                            <li>Sobre nós</li>
+                            <li>Fale conosco</li>
+                        </ul>
 
-                    <ul>
-                        <li>Home</li>
-                        <li>Cursos</li>
-                        <li>Sobre nós</li>
-                        <li>Fale conosco</li>
-                    </ul>
-
-                    <select name="Linguagem" id="idiomaPag">
-                        <option value="portugues">Português</option>
-                        <option value="ingles">Inglês</option>
-                        <option value="espanhou">Espanhou</option>
-                    </select>  
+                        <select name="Linguagem" id="idiomaPag">
+                            <option value="portugues">Português</option>
+                            <option value="ingles">Inglês</option>
+                            <option value="espanhou">Espanhou</option>
+                        </select>  
                 </div>
             </div>
             <div class="bannerInHeader">
@@ -108,7 +107,7 @@
                 </div>
             </div>
             <div class="content boxLeft cartoonImg">
-                <div class="boxDescribe">
+                <div onmouseover="espandirImagemDescribe()" onmouseout="removerImagemDescribe()" class="boxDescribe">
                     <div class="describe">
                         <h1>Como desenhar Parte do corpo</h1>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt delectus eaque, sapiente ratione explicabo asperiores in autem maxime ipsa deleniti, magnam ad accusamus! Rerum nisi, officiis repellat facilis dolor dolores.</p>
@@ -133,13 +132,38 @@
     <div class="aboutMeAll">
         <div class="aboutMe">
             <div class="aboutMeTxt">
-
+                <img src="img/WhatsApp Image 2023-11-15 at 00.38.23.jpeg" alt="">
+                <h1>Kauan de Almeida</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium obcaecati delectus dolorum, consequatur esse veritatis, molestias cumque corporis, quibusdam nesciunt sint laborum ea iure nostrum. Possimus labore optio similique ad?</p>
             </div>
             <div class="aboutMeImgs">
-                img
+                <span class="desenho01">
+                    <img src="img/WhatsApp Image 2023-11-15 at 00.31.05.jpeg" alt="">
+                </span>
+                <span class="desenho02">
+                    <img src="img/WhatsApp Image 2023-11-15 at 00.31.06 (1).jpeg" alt="">
+                </span>
+                <span class="desenho03">
+                    <img src="img/WhatsApp Image 2023-11-15 at 00.31.07.jpeg" alt="">
+                </span>
+                <span class="desenho04">
+                    <img src="img/WhatsApp Image 2023-11-15 at 00.31.07 (3).jpeg" alt="">
+                </span>
+                <span class="desenho05">
+                    <img src="img/WhatsApp Image 2023-11-15 at 00.31.07 (2).jpeg" alt="">
+                </span>
+                <span class="desenho06">
+                    <img src="img/WhatsApp Image 2023-11-15 at 00.31.07 (1).jpeg" alt="">
+                </span>
+                <span class="desenho07">
+                    <img src="img/WhatsApp Image 2023-11-15 at 00.31.06 (2).jpeg" alt="">
+                </span>    
+                <span class="desenho08">
+                    <img src="img/WhatsApp Image 2023-11-15 at 00.31.08 (1).jpeg" alt="">
+                </span>        
             </div>
-        </div>
     </div>
+    <script src="revel.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
