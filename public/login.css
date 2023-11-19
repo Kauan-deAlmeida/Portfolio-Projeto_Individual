@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
 }
-.txt-cadastro{
+.txt-Login{
     background-image: url(https://i.pinimg.com/564x/ff/22/52/ff22523ded8e440ab7462b5d49874864.jpg);
     background-size: 335px;
     background-position-x: -30px;
@@ -30,10 +30,10 @@
     border-radius: 40px 0px 0px 40px;
 }
 
-.txt-cadastro h1{
+.txt-Login h1{
     padding-top: 2%;
 }
-.formulario-de-cadastro{
+.formulario-de-login{
     width: 300px;
     height: 500px;
     display: flex;
@@ -45,27 +45,14 @@
     color: #fff;
     flex-wrap: wrap;
 }
-.formulario-de-cadastro input{
+.formulario-de-login input{
     border-radius: 20px;
     padding-left: 8px;
     width: 150px;
     height: 20px;
 }
 
-.formulario-de-cadastro a{
-    list-style: none;
-    text-decoration: none;
-    padding-bottom: 10px;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.formulario-de-cadastro a:hover{
-    color: orange;
-}
-
-.formulario-de-cadastro button{
+.formulario-de-login button{
     border-radius: 20px;
     width: 100px;
     height: 30px;
@@ -79,16 +66,34 @@
     transition: 0.5s;
 }
 
-.formulario-de-cadastro button:hover{
+.formulario-de-login button:hover{
     background-color: rgb(91, 22, 156);
     color: #fff
+}
+
+.formulario-de-login p{
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+
+.formulario-de-login p:hover{
+    color: orange;
+    font-weight: bolder;
+}
+
+.formulario-de-login a{
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
 }
 
 .voltar_para_home{
     width: 250px;
     height: 40px;
     padding: 10px 20px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .voltar_para_home img{
