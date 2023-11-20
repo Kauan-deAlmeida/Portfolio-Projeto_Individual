@@ -15,7 +15,7 @@ body {
 
 /*  */
 .heat {
-    background-image: url(img/Banner_de_fundo_das_descricoes/banner01.avif);
+    background-image: url(assets/imgs/Banner_de_fundo_das_descricoes/banner01.avif);
     background-repeat: no-repeat;
     background-position: center ;
     background-size: cover;
@@ -184,7 +184,7 @@ body {
 .figuraPagTransacao .figuraBackgroudAnimation {
     width: 100%;
     height: 350px;
-    background-image: url(img/Fotos_de_Passagem/FDD-Animais-scaled.jpg);
+    background-image: url(assets/imgs/Fotos_de_Passagem/FDD-Animais-scaled.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
@@ -222,15 +222,15 @@ body {
 }
 /*  */
 #planoHQ {
-    background-image: url(img/Cards_de_modelo/card01.jpg);
+    background-image: url(assets/imgs/Cards_de_modelo/card01.jpg);
 }
 /*  */
 #planoAnime {
-    background-image: url(img/Cards_de_modelo/card02.jfif);
+    background-image: url(assets/imgs/Cards_de_modelo/card02.jfif);
 }
 /*  */
 #planoAnatomia {
-    background-image: url(img/Cards_de_modelo/card03.jfif);
+    background-image: url(assets/imgs/Cards_de_modelo/card03.jfif);
 }
 
 /*  */
@@ -306,23 +306,23 @@ body {
 }
 /*  */
 .animationImg {
-    background-image: url(img/Banner_de_fundo_das_descricoes/banner01.avif);
+    background-image: url(assets/imgs/Banner_de_fundo_das_descricoes/banner01.avif);
 }
 /*  */
 .animeImg {
-    background-image: url(img/Banner_de_fundo_das_descricoes/banner02.jpg);
+    background-image: url(assets/imgs/Banner_de_fundo_das_descricoes/banner02.jpg);
 }
 /*  */
 .anatomiaImgMao {
-    background-image: url(img/Banner_de_fundo_das_descricoes/banner03.jpg);
+    background-image: url(assets/imgs/Banner_de_fundo_das_descricoes/banner03.jpg);
 }
 /*  */
 .cartoonImg {
-    background-image: url(img/Banner_de_fundo_das_descricoes/banner04.jpg);
+    background-image: url(assets/imgs/Banner_de_fundo_das_descricoes/banner04.jpg);
 }
 /*  */
 .anatomiaImgPerna {
-    background-image: url(img/Banner_de_fundo_das_descricoes/banner05.jpg);
+    background-image: url(assets/imgs/Banner_de_fundo_das_descricoes/banner05.jpg);
 }
 /*  */
 .explanation .exemplos .boxLeft {
@@ -396,7 +396,7 @@ body {
 }
 /*  */
 .finalizandoConteudo {
-    background-image: url(img/Fotos_de_Passagem/FDD-Piratinha-Formas-Básicas-scaled.jpg);
+    background-image: url(assets/imgs/Fotos_de_Passagem/FDD-Piratinha-Formas-Básicas-scaled.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -2,11 +2,9 @@
     margin: 0;
     padding: 0;
 }
- body{
-
-   
-
- }   
+html{
+    overflow: hidden;
+}
 .banner{
     background-image: url(https://i.pinimg.com/564x/fb/80/98/fb8098f9a9fd3ace000b0fdee31c86d9.jpg);
     background-repeat:no-repeat; 
