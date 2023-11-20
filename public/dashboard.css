@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body{
+    background: linear-gradient(90deg, rgba(19, 48, 96, 1) 0%, rgba(79, 37, 118, 1) 25%, rgba(119, 11, 114, 1) 68%, rgba(69, 4, 63, 1) 100%);
+    width: 100%;
+    display: flex;
+
+}
+
+/* Parte do perfil, onde tera as configurações e perfil do usuário */
+.perfil{
+    background-color: rgb(13, 13, 78);
+    width: 200px;
+    height: 49vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    color: #fff
+}
+
+.perfil .funcoesCurso .painel{
+    margin: 50px 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.perfil .usuario h2{
+    padding: 20px 15%;
+}
+
+#usuario{
+    padding: 0;
+    text-align: center;
+}
+
+#sair{
+    cursor: pointer;
+}
+
