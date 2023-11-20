@@ -27,6 +27,13 @@ body{
     margin: 50px 0;
     text-align: center;
     cursor: pointer;
+    
+}
+
+.funcoesCurso .painel:hover{
+    color: teal;
+    font-size: 18px;
+    transition: 0.5s;
 }
 
 .perfil .usuario h2{
@@ -40,5 +47,55 @@ body{
 
 #sair{
     cursor: pointer;
+    & :hover{
+        font-size: 20px;
+        color: red;
+        transition: 0.5s;
+    }
 }
 
+/* Parte que fica os videos em quatrados */
+
+.banner{
+    width: 100%;
+    height: 49vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .boxes{
+    width: 90%;
+    height: 95%;
+    background-color:#dfdfdf;
+    border-radius: 40px;
+}
+
+.banner .boxes .box{
+    width: 100%;
+    height: 25%;
+    display: flex;
+}
+
+.box .cards{
+    margin-left: 5px;
+    padding: 10px 2px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cards img{
+    border-radius: 20px;
+    width: 90%;
+    height: 75%;
+    transition: 0.5s;
+}
+
+.cards img:hover{
+    width: 95%;
+    height: 80%;
+}
