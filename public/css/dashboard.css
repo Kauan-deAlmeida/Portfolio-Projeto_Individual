@@ -24,7 +24,8 @@ body{
 }
 
 .perfil .funcoesCurso .painel{
-    margin: 50px 0;
+    width: 150px;
+    margin: 40px 0;
     text-align: center;
     cursor: pointer;
     
@@ -32,8 +33,8 @@ body{
 
 .funcoesCurso .painel:hover{
     color: teal;
-    font-size: 18px;
     transition: 0.5s;
+    transform: scale(1.1);
 }
 
 .perfil .usuario h2{
@@ -48,7 +49,7 @@ body{
 #sair{
     cursor: pointer;
     & :hover{
-        font-size: 20px;
+        transform: scale(1.1);
         color: red;
         transition: 0.5s;
     }
@@ -93,9 +94,11 @@ body{
     width: 90%;
     height: 75%;
     transition: 0.5s;
+    filter: brightness(90%);
 }
 
 .cards img:hover{
     width: 95%;
     height: 80%;
+    filter: brightness(50%);
 }

@@ -19,3 +19,6 @@ function removerImagemDescribe() {
     zoomCartoon.classList.remove("active");
 }
 
+
+
+

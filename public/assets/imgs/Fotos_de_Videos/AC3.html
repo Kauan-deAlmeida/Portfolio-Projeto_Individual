@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tênis Clube SPTECH</title>
+    <style>
+      body {
+        display: flex;
+        align-items: stretch;
+      }
+
+      body div:first-child,
+      body div:nth-of-type(2) {
+        padding: 8px;
+        border: 2px solid rgba(0, 0, 0, 0.2);
+      }
+
+      body div:nth-of-type(2) {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="input_qtd_partidas">
+        Rodadas máximas:
+        <input id="input_qtd_partidas" /><br />
+      </label>
+
+      <button onclick="realizar_partida()">Realizar partida</button>
+
+      <h3>Informe as partidas que deseja relembrar</h3>
+
+      <label for="input_inicio_intervalo">Início:</label>
+      <input id="input_inicio_intervalo" />
+      <label for="input_fim_intervalo">Fim:</label>
+      <input id="input_fim_intervalo" />
+
+      <button onclick="relembrar_partidas()">Relembrar</button>
+    </div>
+    <div>
+      <h3>Painel</h3>
+      <div id="div_painel"></div>
+    </div>
+  </body>
+</html>
+<script></script>
