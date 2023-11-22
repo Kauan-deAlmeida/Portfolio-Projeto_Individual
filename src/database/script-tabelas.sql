@@ -13,6 +13,7 @@ USE TeamArt;
 CREATE TABLE Curso(
     idCurso INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(225),
+    descricao VARCHAR(300),
     data_cricacao DATETIME
 );
 

@@ -17,19 +17,143 @@
                     <a href="index.html"><img src="https://cdn.icon-icons.com/icons2/1744/PNG/512/3643764-back-backward-left-reply-turn_113415.png" alt=""></a>
                 </div>
                 <b>Nome:<br></b>
-                <input type="text" placeholder="Nome usuario"><br>
-            
+                <input id="nome_input" type="text" placeholder="Nome usuario"><br>
+
+                <b>CPF:<br></b>
+                <input id="cpf_input" type="text" placeholder="000.000.000-00"><br>
+                
+                <b>Celular:<br></b>
+                <input id="celular_input" type="text" placeholder="(11)99999-9999"><br>
+
                 <b>Email:<br></b>
-                <input type="text" placeholder="exemplo@gmail.com"><br>
+                <input id="email_input" type="email" placeholder="exemplo@gmail.com"><br>
             
                 <b>Senha:<br></b>
-                <input type="text" placeholder="*******"><br>
+                <input id="senha_input" type="password" placeholder="*******"><br>
             
                 <b>Confirmar senha:<br></b>
-                <input type="text" placeholder="*******"><br>
+                <input id="confirmar_senha_input" type="password" placeholder="*******"><br>
+
                 <a href="login.html"><p>Já tenho uma conta</p></a>
-                <a href="login.html"><b><button>criar</button></a>
+                <a href=""><b><button onclick="cadastrar()">criar</button></a>
             </div>
     </div>
 </body>
 </html>
+
+<script>
+
+    function cadastrar(){
+        // Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var cpfVar = cpf_input.value;
+        var celularVar = celular_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmarSenhaVar = confirmar_senha_input.value;
+        
+        if(
+            nomeVar == "" &&
+            cpfVar == "" &&
+            celularVar == "" &&
+            emailVar == "" &&
+            senhaVar == "" &&
+            confirmarSenhaVar == ""
+        ){
+            alert("Mensagem de erro para todos os campos em branco)");
+        } 
+        else if(nomeVar.length < 1){
+            alert("Nome não foi preenchido");
+        } 
+        else if(cpfVar.length != 11){  
+            alert("Número de cpf invalido");
+        } 
+        else if(celularVar.length != 11){  
+            alert("Número de celular invalido");
+        } 
+        else if(emailVar.indexOf('@') > emailVar.indexOf('.com') || emailVar.endsWith('.com') == false || emailVar.length < 1){
+            alert("Email invalido, informe um novo email");
+        } 
+        else if(senhaVar.length < 6){
+            alert("Senha muito curta");
+        } 
+        else if(confirmarSenhaVar != senhaVar){
+            alert("Confimar senha está diferente da senha");
+        } 
+        else{
+            setInterval(sumirMensagem, 5000);
+        }
+
+        // Enviando o valor da nova input
+        fetch("/aluno/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/aluno.js
+                nomeServer: nomeVar,
+                cpfServer: cpfVar,
+                celularServer: celularVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                confirmarSenhaServer: confirmarSenhaVar
+            })
+        })
+        .then(function (resposta){
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML =
+                    "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+            setTimeout(() => {
+                window.location = "login.html";
+            }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+    }
+
+    function listar() {
+        fetch("/curso/listar", {
+        method: "GET",
+        })
+        .then(function (resposta) {
+            resposta.json().then((empresas) => {
+            empresas.forEach((empresa) => {
+                listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+            });
+            });
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+
+    function sumirMensagem() {
+        cardErro.style.display = "none";
+    }
+
+    function erroPorNaoPreencherDados(){
+        cardErro.style.display = "block";
+
+        finalizarAguardar();
+        return false;
+    }
+</script>
