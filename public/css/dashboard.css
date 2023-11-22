@@ -55,7 +55,7 @@ body{
     }
 }
 
-/* Parte que fica os videos em quatrados */
+/* Parte que fica os videos em Blocos */
 
 .banner{
     width: 100%;
@@ -66,7 +66,7 @@ body{
 }
 
 .banner .boxes{
-    width: 90%;
+    width: 95%;
     height: 95%;
     background-color:#dfdfdf;
     border-radius: 40px;
@@ -80,13 +80,18 @@ body{
 
 .box .cards{
     margin-left: 5px;
-    padding: 10px 2px;
+    padding: 5px 5px;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     text-align: center;
+
+    & p{
+        padding-top: 10px;
+    }
 }
 
 .cards img{
@@ -98,7 +103,6 @@ body{
 }
 
 .cards img:hover{
-    width: 95%;
-    height: 80%;
+    transform: scale(1.1);
     filter: brightness(50%);
 }
