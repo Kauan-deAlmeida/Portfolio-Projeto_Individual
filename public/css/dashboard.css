@@ -55,6 +55,18 @@ body{
     }
 }
 
+/* Porcentagem de quanto já fez o curso */
+.container{
+    width: 95%;
+    height: 30px;
+    border-radius: 40px 40px 0px 0px;
+    background-color: #dfdfdf;
+
+    & p{
+        padding: 10px 50px;
+    }
+}
+
 /* Parte que fica os videos em Blocos */
 
 .banner{
@@ -63,13 +75,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .banner .boxes{
     width: 95%;
-    height: 95%;
+    height: 90%;
     background-color:#dfdfdf;
-    border-radius: 40px;
+    border-radius: 0px 0px 40px 40px;
 }
 
 .banner .boxes .box{
@@ -79,7 +92,6 @@ body{
 }
 
 .box .cards{
-    margin-left: 5px;
     padding: 5px 5px;
     width: 100%;
     height: 100%;
@@ -96,13 +108,17 @@ body{
 
 .cards img{
     border-radius: 20px;
-    width: 90%;
+    width: 95%;
     height: 75%;
     transition: 0.5s;
     filter: brightness(90%);
 }
 
 .cards img:hover{
-    transform: scale(1.1);
+    transform: scale(1.07);
     filter: brightness(50%);
+}
+
+.boxes iframe{
+    padding: 30px;
 }
