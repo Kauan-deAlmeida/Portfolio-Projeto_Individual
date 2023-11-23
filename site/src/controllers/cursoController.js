@@ -1,5 +1,5 @@
 const { resourceUsage } = require("process");
-var cursoModel = require("../models/empresaModel");
+var cursoModel = require("../models/cursoModel");
 
 function buscarPorTitulo(req, res){
     var titulo = req.query.cnpj;
