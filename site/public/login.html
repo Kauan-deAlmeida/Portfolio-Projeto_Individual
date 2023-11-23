@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - TeamArt</title>
+
+    <script src="./js/sessao.js"></script>
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
@@ -47,7 +49,7 @@
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/alunos/autenticar", {
+        fetch("/aluno/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -72,7 +74,7 @@
                     sessionStorage.CURSO = JSON.stringify(json.curso)
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./dashboard/dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

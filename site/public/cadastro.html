@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - TeamArt</title>
+
+    <script src="./js/sessao.js"></script>
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
@@ -44,6 +46,7 @@
 <script>
 
     function cadastrar(){
+        aguardar();
         // Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
@@ -61,25 +64,60 @@
             senhaVar == "" ||
             confirmarSenhaVar == ""
         ){
-            alert("Mensagem de erro para todos os campos em branco)");
+            cardErro.style.display = "block";
+             mensagem_erro.innerHTML =
+            "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
         } 
         else if(nomeVar.length < 1){
-            alert("Nome não foi preenchido");
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+            "Nome não foi preenchido";
+
+            finalizarAguardar();
+            return false;
         } 
         else if(cpfVar.length != 11){  
-            alert("Número de cpf invalido");
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+            "Número de cpf invalido";
+            
+            finalizarAguardar();
+            return false;
         } 
         else if(celularVar.length != 11){  
-            alert("Número de celular invalido");
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+            "Número de celular invalido";
+            
+            finalizarAguardar();
+            return false;
         } 
         else if(emailVar.indexOf('@') > emailVar.indexOf('.com') || emailVar.endsWith('.com') == false || emailVar.length < 1){
-            alert("Email invalido, informe um novo email");
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+            "Email invalido, informe um novo email";
+            
+            finalizarAguardar();
+            return false;
         } 
         else if(senhaVar.length < 6){
-            alert("Senha muito curta");
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+            "Senha muito curta";
+            
+            finalizarAguardar();
+            return false;
         } 
         else if(confirmarSenhaVar != senhaVar){
-            alert("Confimar senha está diferente da senha");
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+            "Confimar senha está diferente da senha";
+            
+            finalizarAguardar();
+            return false;
         } 
         else{
             setInterval(sumirMensagem, 5000);
@@ -148,12 +186,5 @@
 
     function sumirMensagem() {
         cardErro.style.display = "none";
-    }
-
-    function erroPorNaoPreencherDados(){
-        cardErro.style.display = "block";
-
-        finalizarAguardar();
-        return false;
     }
 </script>
