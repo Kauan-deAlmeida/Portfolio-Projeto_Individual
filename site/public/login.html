@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - TeamArt</title>
-
-    <script src="./js/sessao.js"></script>
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+
+    <div class="login">
+        <div class="alerta_erro">
+          <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+          </div>
+        </div>
     <div class="banner">
             <div class="txt-Login">
                 <h1>Fazer login </h1>
@@ -27,8 +32,14 @@
                 <p>Esqueceu a senha?</p>
                 <a href="cadastro.html"><p>Ainda não tenho uma conta?</p></a> 
                 <b><button onclick="entrar()">Login</button>
+
+                    <!-- <div id="div_aguardar" class="loading-div">
+                        <img src="./assets/circle-loading.gif" id="loading-gif">
+                    </div>
+                    <div id="div_erros_login"></div> -->
             </div>
     </div>
+    <script src="./js/sessao.js"></script>
 </body>
 </html>
 
@@ -40,7 +51,10 @@
         var senhaVar = senha_input.value;
 
         if(emailVar == "" || senhaVar == ""){
-            alert("Email ou senha invalido");
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Email ou senha invalido)";
+            finalizarAguardar();
+            return false;
         }
         else {
             setInterval(sumirMensagem, 5000)
