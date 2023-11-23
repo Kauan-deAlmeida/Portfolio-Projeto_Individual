@@ -1,5 +1,5 @@
 const { resourceUsage } = require("process");
-var empresaModel = require("../models/empresaModel");
+var cursoModel = require("../models/empresaModel");
 
 function buscarPorTitulo(req, res){
     var titulo = req.query.cnpj;
@@ -18,7 +18,7 @@ function listar(req, res){
 function buscarPorId(req, res){
     var idCurso = req.params.idCurso;
 
-    cursoModel.buscarPorId(id).then((resultado) => {
+    cursoModel.buscarPorId(idCurso).then((resultado) => {
         res.status(200).json(resultado);
     });
 }
