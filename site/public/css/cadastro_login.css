@@ -11,6 +11,7 @@
  .cadastroLogi_ScrollReveal{
     visibility: hidden;
  }
+
 .banner{
     background-image: url(../assets/imgs/Fotos_cadastro_login/Foto_fundo.jpg);
     background-repeat:no-repeat;
@@ -29,10 +30,16 @@
     width: 300px;
     height: 490px;
     border-radius: 40px 0px 0px 40px;
-    filter: brightness(50%);
 }
 
-.formulario-de-cadastro{
+.gradientNavbar{
+    width: 100%;
+    height: 100%;
+    border-radius: 40px 0px 0px 40px;
+    background-color: rgba(000, 000, 000, 0.5);
+}
+
+.formulario{
     width: 300px;
     height: 490px;
     display: flex;
@@ -64,14 +71,14 @@
     transform: scale(1.20);
 }
 
-.formulario-de-cadastro input{
+.formulario input{
     border-radius: 20px;
     padding-left: 10px;
     width: 150px;
     height: 25px;
 }
 
-.formulario-de-cadastro a{
+.formulario a{
     list-style: none;
     text-decoration: none;
     padding-bottom: 10px;
@@ -80,15 +87,17 @@
     transition: 0.3s;
 }
 
-.formulario-de-cadastro a{
-    color: orange;
+.formulario a{
+    color: white;
+    font-weight: bolder;
 }
 
-.formulario-de-cadastro a:hover{
+.formulario a:hover{
     transform: scale(1.06);
+    color: orange
 }
 
-.formulario-de-cadastro button{
+.formulario button{
     border-radius: 20px;
     width: 100px;
     height: 30px;
@@ -103,14 +112,14 @@
     color: white
 }
 
-.formulario-de-cadastro button:hover{
+.formulario button:hover{
     background-color: rgb(6, 97, 97);
 }
 
 .alerta_erro{
     display: flex;
     justify-content: flex-end;
-    margin-top: 150px;
+    padding-top: 150px;
   }
   
   .card_erro {
@@ -128,4 +137,10 @@
   .card_erro #mensagem_erro{
     font-weight: 500;
     font-size: 20px;
+  }
+
+
+  /*Css para pagina Login */
+  .paginaLogin{
+    margin-bottom: 90px;
   }
