@@ -13,7 +13,6 @@ function autenticar(req, res){
         alunoModel.autenticar(email, senha)
             .then(
                 function (resultAutenticar){
-                    console.log(`\nResultados encontrados: ${resultAutenticar.email}`);
                     console.log(`Resultados encontrados; ${JSON.stringify(resultAutenticar)}`); // transforma JSON em String
                         if (resultAutenticar.length == 1){
                             console.log(resultAutenticar);

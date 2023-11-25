@@ -8,28 +8,22 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
-    <div class="banner">
-            <div class="txt-cadastro cadastroLogi_ScrollReveal">
-                <h1>Criar Cadastro </h1>
+    <div class="banner">            
+            <div class="navbar cadastroLogi_ScrollReveal">
+                <div class="alerta_erro">
+                    <div class="card_erro" id="cardErro">
+                        <span id="mensagem_erro"></span>
+                    </div>
+                </div> 
             </div>
-            <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
-                </div>
-            </div> 
             
             <div class="formulario-de-cadastro cadastroLogi_ScrollReveal">
                 <div class="voltar_para_home">
                     <a href="index.html"><img src="https://cdn.icon-icons.com/icons2/1744/PNG/512/3643764-back-backward-left-reply-turn_113415.png" alt=""></a>
+                    <h1>Cadastrar-se </h1> 
                 </div>
                 <b>Nome:<br></b>
                 <input id="nome_input" type="text" placeholder="Nome usuario"><br>
-
-                <b>CPF:<br></b>
-                <input id="cpf_input" type="text" placeholder="000.000.000-00"><br>
-                
-                <b>Celular:<br></b>
-                <input id="celular_input" type="text" placeholder="(11)99999-9999"><br>
 
                 <b>Email:<br></b>
                 <input id="email_input" type="email" placeholder="exemplo@gmail.com"><br>
@@ -41,7 +35,7 @@
                 <input id="confirmar_senha_input" type="password" placeholder="*******"><br>
 
                 <a href="login.html"><p>Já tenho uma conta</p></a>
-                <b><button onclick="cadastrar()">criar</button>
+                <b><button onclick="cadastrar()">Criar</button>
             
         </div>
     </div>
@@ -58,29 +52,26 @@
         // Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
-        var cpfVar = cpf_input.value;
-        var celularVar = celular_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmarSenhaVar = confirmar_senha_input.value;
         var fkCursoVar = 1
         
         if(
-            nomeVar == "" ||
-            cpfVar == "" ||
-            celularVar == "" ||
-            emailVar == "" ||
-            senhaVar == "" ||
+            nomeVar == "" &&
+            emailVar == "" &&
+            senhaVar == "" &&
             confirmarSenhaVar == ""
-        ){
+        ){         
             cardErro.style.display = "block";
              mensagem_erro.innerHTML =
             "(Mensagem de erro para todos os campos em branco)";
-
+    
             finalizarAguardar();
             return false;
         } 
-        else if(nomeVar.length < 1){
+
+        if(nomeVar.length < 1){
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
             "Nome não foi preenchido";
@@ -88,22 +79,7 @@
             finalizarAguardar();
             return false;
         } 
-        else if(cpfVar.length != 11){  
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML =
-            "Número de cpf invalido";
-            
-            finalizarAguardar();
-            return false;
-        } 
-        else if(celularVar.length != 11){  
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML =
-            "Número de celular invalido";
-            
-            finalizarAguardar();
-            return false;
-        } 
+        
         else if(emailVar.indexOf('@') > emailVar.indexOf('.com') || emailVar.endsWith('.com') == false || emailVar.length < 1){
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
@@ -142,8 +118,6 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/aluno.js
                 nomeServer: nomeVar,
-                cpfServer: cpfVar,
-                celularServer: celularVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
                 confirmarSenhaServer: confirmarSenhaVar,

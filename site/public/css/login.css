@@ -1,12 +1,14 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 html{
     overflow: hidden;
 }
+
 .banner{
-    background-image: url(https://i.pinimg.com/564x/fb/80/98/fb8098f9a9fd3ace000b0fdee31c86d9.jpg);
+    background-image: url(../assets/imgs/Fotos_cadastro_login/Foto_fundo.jpg);
     background-repeat:no-repeat; 
     background-size:cover;
     width:100%;
@@ -17,7 +19,7 @@ html{
     align-items: center;
 }
 .txt-Login{
-    background-image: url(https://i.pinimg.com/564x/ff/22/52/ff22523ded8e440ab7462b5d49874864.jpg);
+    background-image: url(../assets/imgs/Fotos_cadastro_login/Foto_navbar.jpg);
     background-size: 335px;
     background-position-x: -30px;
     width: 250px;

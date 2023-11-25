@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
  html{
     overflow: hidden;
@@ -11,9 +12,9 @@
     visibility: hidden;
  }
 .banner{
-    background-image: url(https://i.pinimg.com/564x/fb/80/98/fb8098f9a9fd3ace000b0fdee31c86d9.jpg);
-    background-repeat:no-repeat; 
-    background-size:cover;
+    background-image: url(../assets/imgs/Fotos_cadastro_login/Foto_fundo.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
     width:100%;
     height: 50vw;
     background-position-x:center;
@@ -21,23 +22,19 @@
     justify-content: center;
     align-items: center;
 }
-.txt-cadastro{
-    background-image: url(https://i.pinimg.com/564x/ff/22/52/ff22523ded8e440ab7462b5d49874864.jpg);
-    background-size: 335px;
-    background-position-x: -30px;
-    width: 250px;
-    height: 500px;
-    justify-content: center;
-    display: flex;
-    color: #fff;
+
+.navbar{
+    background-image: url(../assets/imgs/Fotos_cadastro_login/Foto_navbar.jpg);
+    background-size: cover;
+    width: 300px;
+    height: 490px;
     border-radius: 40px 0px 0px 40px;
+    filter: brightness(50%);
 }
 
-.txt-cadastro h1{
-    padding-top: 2%;
-}
 .formulario-de-cadastro{
     width: 300px;
+    height: 490px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -47,11 +44,31 @@
     color: #fff;
     flex-wrap: wrap;
 }
+
+.voltar_para_home{
+    width: 250px;
+    height: 40px;
+    padding: 10px 20px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.voltar_para_home img{
+    width: 30px;
+    height: 25px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.voltar_para_home img:hover{
+    transform: scale(1.20);
+}
+
 .formulario-de-cadastro input{
     border-radius: 20px;
-    padding-left: 8px;
+    padding-left: 10px;
     width: 150px;
-    height: 20px;
+    height: 25px;
 }
 
 .formulario-de-cadastro a{
@@ -63,15 +80,19 @@
     transition: 0.3s;
 }
 
-.formulario-de-cadastro a:hover{
+.formulario-de-cadastro a{
     color: orange;
+}
+
+.formulario-de-cadastro a:hover{
+    transform: scale(1.06);
 }
 
 .formulario-de-cadastro button{
     border-radius: 20px;
     width: 100px;
     height: 30px;
-    background-color: blueviolet;
+    background-color: teal;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,35 +100,17 @@
     cursor: pointer;
     box-shadow: 2px 2px 25px black;
     transition: 0.5s;
+    color: white
 }
 
 .formulario-de-cadastro button:hover{
-    background-color: rgb(91, 22, 156);
-    color: #fff
-}
-
-.voltar_para_home{
-    width: 250px;
-    height: 40px;
-    padding: 10px 20px;
-    margin-bottom: 50px;
-}
-
-.voltar_para_home img{
-    width: 30px;
-    height: 25px;
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-.voltar_para_home img:hover{
-    width: 35px;
-    height: 30px;
+    background-color: rgb(6, 97, 97);
 }
 
 .alerta_erro{
     display: flex;
     justify-content: flex-end;
+    margin-top: 150px;
   }
   
   .card_erro {
