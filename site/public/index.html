@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeamArt</title>
-
     <script src="./js/sessao.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <!--  -->
-            <div class="bannerInHeader">
+            <div class="bannerInHeader efeitoScrollReveal">
                 <h1>Bem vindo ao TeamArt</h1>
             </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="container">
             <!--  -->
             <div class="contentCard">
-                <img src="assets/imgs/Fotos_sobre_Curso/sobreCurso01.jpg" alt="">
+                <img class="scrollRightForLeft" src="assets/imgs/Fotos_sobre_Curso/sobreCurso01.jpg" alt="">
                  <!--  -->
                 <div class="content">
                     <h2>Neste curso ira ter aulas mostrando como, como, assim, desenhar personagens como:<br><u style="color: turquoise; opacity: 1;">mão, pernas, troncos, rosto e muito mais</u></h2><br>
@@ -57,20 +57,26 @@
     <!--  -->
     <div class="social">
         <div class="boxes">
-            <!--  -->
-            <div class="box" id="planoHQ">
-                <h2>Desenhos em HQ</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ad at deleniti facilis, consectetur hic nihil explicabo neque, fuga nostrum blanditiis ipsam quibusdam. Dolor cupiditate, molestias consequatur laboriosam tenetur est.</p>
+            <!-- Card sobre como desenhar HQ -->
+            <div class="scrollCard1">
+                <div class="box" id="planoHQ">
+                    <h2>Desenhos em HQ</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ad at deleniti facilis, consectetur hic nihil explicabo neque, fuga nostrum blanditiis ipsam quibusdam. Dolor cupiditate, molestias consequatur laboriosam tenetur est.</p>
+                </div>
             </div>
-            <!--  -->
-            <div class="box"  id="planoAnime">
-                <h2>Desenhos em Anime</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ad at deleniti facilis, consectetur hic nihil explicabo neque, fuga nostrum blanditiis ipsam quibusdam. Dolor cupiditate, molestias consequatur laboriosam tenetur est.</p>
+            <!-- Card sobre como desenhar Anime -->
+            <div class="scrollCard2">
+                <div class="box"  id="planoAnime">
+                    <h2>Desenhos em Anime</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ad at deleniti facilis, consectetur hic nihil explicabo neque, fuga nostrum blanditiis ipsam quibusdam. Dolor cupiditate, molestias consequatur laboriosam tenetur est.</p>
+                </div>
             </div>
-            <!--  -->
-            <div class="box" id="planoAnatomia">
-                <h2>Desenhos em Anatomia</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ad at deleniti facilis, consectetur hic nihil explicabo neque, fuga nostrum blanditiis ipsam quibusdam. Dolor cupiditate, molestias consequatur laboriosam tenetur est.</p>
+            <!-- Card sobre como desenhar Anatomia -->
+            <div class="scrollCard3">
+                <div class="box" id="planoAnatomia">
+                    <h2>Desenhos em Anatomia</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, ad at deleniti facilis, consectetur hic nihil explicabo neque, fuga nostrum blanditiis ipsam quibusdam. Dolor cupiditate, molestias consequatur laboriosam tenetur est.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -80,18 +86,18 @@
         <!--  -->
         <div class="exemplos ">
             <div class="descricaoCurso">
-                <div class="descricaoCursoTexto">
+                <div class="descricaoCursoTexto efeitoScrollReveal">
                 <h1>
                 Referencias de aulas do curso
             </h1>
             <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita ex illo, magni, dolores deserunt, fugit voluptates iste nemo itaque earum nesciunt? Explicabo facere rerum distinctio consequatur qui quod totam aliquid.</h2><br>
             <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita ex illo, magni, dolores deserunt, fugit voluptates iste nemo itaque earum nesciunt? Explicabo facere rerum distinctio consequatur qui quod totam aliquid.</h2>
         </div>
-            <img style="box-shadow: 10px 0px 20px 5px;" src="assets/imgs/Fotos_sobre_Curso/sobreCurso02.jpg" alt="">
+            <img class="scrollLeftForRigth" style="box-shadow: 10px 0px 20px 5px;" src="assets/imgs/Fotos_sobre_Curso/sobreCurso02.jpg" alt="">
         </div>
         <!--  -->
             <div class="content boxRight animationImg imagensPEsquerda">
-                <div class="boxDescribe">
+                <div class="boxDescribe scrollRightForLeft">
                     <img src="assets/imgs/Banner_da_descricao/descricao01.jpg" alt="">
                     <div class="describe">
                         <h1>Como desenhar Parte do corpo</h1>
@@ -101,7 +107,7 @@
             </div>
         <!--  -->
             <div class="content boxLeft animeImg">
-                <div class="boxDescribe">
+                <div class="boxDescribe scrollLeftForRigth">
                     <div class="describe">
                         <h1>Como desenhar Parte do corpo</h1>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt delectus eaque, sapiente ratione explicabo asperiores in autem maxime ipsa deleniti, magnam ad accusamus! Rerum nisi, officiis repellat facilis dolor dolores.</p>
@@ -111,7 +117,7 @@
             </div>
         <!--  -->
             <div class="content boxRight anatomiaImgMao imagensPEsquerda">
-                <div class="boxDescribe">
+                <div class="boxDescribe scrollRightForLeft">
                     <img src="assets/imgs/Banner_da_descricao/descricao03.jpg" alt="">
                     <div class="describe">
                         <h1>Como desenhar Parte do corpo</h1>
@@ -121,7 +127,7 @@
             </div>
         <!--  -->
             <div class="content boxLeft cartoonImg">
-                <div onmouseover="espandirImagemDescribe()" onmouseout="removerImagemDescribe()" class="boxDescribe">
+                <div class="boxDescribe scrollLeftForRigth">
                     <div class="describe">
                         <h1>Como desenhar Parte do corpo</h1>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt delectus eaque, sapiente ratione explicabo asperiores in autem maxime ipsa deleniti, magnam ad accusamus! Rerum nisi, officiis repellat facilis dolor dolores.</p>
@@ -131,7 +137,7 @@
             </div>
         <!--  -->
             <div class="content boxRight anatomiaImgPerna imagensPEsquerda">
-                <div class="boxDescribe">
+                <div class="boxDescribe scrollRightForLeft">
                     <img src="assets/imgs/Banner_da_descricao/descricao05.jpg" alt="">
                     <div class="describe">
                         <h1>Como desenhar Parte do corpo</h1>
@@ -198,7 +204,7 @@
         <p>Outluck</p>
     </div>
     <!--  -->
-    <script src="revel.js"></script>
+    <script src="reveal.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

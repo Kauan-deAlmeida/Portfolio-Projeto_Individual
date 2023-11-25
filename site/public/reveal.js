@@ -1,6 +1,7 @@
 
 window.revelar = ScrollReveal({reset:true})
 
+// Pagina HOME
 // Topo do site
 revelar.reveal('.efeitoScrollReveal',
 {
@@ -46,7 +47,7 @@ revelar.reveal('.scrollLeftForRigth',
     origin: 'left'
 })
 
-
+// Pagina Cadastro e Login
 // Tela de Cadastro e Login
 revelar.reveal('.cadastroScrollReveal',
 {
@@ -55,18 +56,5 @@ revelar.reveal('.cadastroScrollReveal',
     duration: 1500,
     delay: 200
 })
-
-revelar.reveal('.loginScrollReveal',
-{
-    origin: 'rigth',
-    distance: '70px',
-    duration: 1500,
-    delay: 200
-})
-
-
-
-
-
 
 
