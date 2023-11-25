@@ -14,7 +14,7 @@ CREATE TABLE Curso(
     idCurso INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(225),
     descricao VARCHAR(300),
-    data_cricacao DATETIME
+    data_criacao DATETIME
 );
 
 CREATE TABLE Aluno(
@@ -27,3 +27,6 @@ CREATE TABLE Aluno(
     fkCurso INT,
     CONSTRAINT fkIdCurso FOREIGN KEY (fkCurso) REFERENCES Curso(idCurso)
 );
+
+INSERT INTO curso (titulo, descricao, data_criacao) VALUES
+    (1, 'Curso de desenho', 'Aulas de como desenhar realismo', now());

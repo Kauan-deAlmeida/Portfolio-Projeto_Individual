@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - TeamArt</title>
-
-    <script src="./js/sessao.js"></script>
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
@@ -13,6 +11,11 @@
             <div class="txt-cadastro">
                 <h1>Criar Cadastro </h1>
             </div>
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div> 
             
             <div class="formulario-de-cadastro">
                 <div class="voltar_para_home">
@@ -37,29 +40,19 @@
                 <input id="confirmar_senha_input" type="password" placeholder="*******"><br>
 
                 <a href="login.html"><p>Já tenho uma conta</p></a>
-                <a href=""><b><button onclick="cadastrar()">criar</button></a>
-
-                    <!-- <div class="login">
-                        <div class="alerta_erro">
-                            <div class="card_erro" id="cardErro">
-                                <span id="mensagem_erro"></span>
-                            </div>
-                        </div>
-
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif" />
-                    </div> -->
+                <b><button onclick="cadastrar()">criar</button>
             
-                    <!-- <div id="div_erros_login"></div> -->
             </div>
     </div>
+
+    <script src="js/sessao.js"></script>
 </body>
 </html>
 
 <script>
 
     function cadastrar(){
-        aguardar();
+        // aguardar();
         // Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
@@ -68,6 +61,7 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmarSenhaVar = confirmar_senha_input.value;
+        var fkCursoVar = 1
         
         if(
             nomeVar == "" ||
@@ -150,7 +144,8 @@
                 celularServer: celularVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                confirmarSenhaServer: confirmarSenhaVar
+                confirmarSenhaServer: confirmarSenhaVar,
+                fkCursoServer: fkCursoVar
             })
         })
         .then(function (resposta){
@@ -180,24 +175,8 @@
     return false;
     }
 
-    function listar() {
-        fetch("/curso/listar", {
-        method: "GET",
-        })
-        .then(function (resposta) {
-            resposta.json().then((empresas) => {
-            empresas.forEach((empresa) => {
-                listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-            });
-            });
-        })
-        .catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-    }
-
-
     function sumirMensagem() {
         cardErro.style.display = "none";
     }
+
 </script>

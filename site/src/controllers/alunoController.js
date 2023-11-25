@@ -18,7 +18,7 @@ function autenticar(req, res){
                         if (resultAutenticar.length == 1){
                             console.log(resultAutenticar);
 
-                            cursoModel.buscarCurso(resultAutenticar[0].idCurso)
+                            cursoModel.buscarPorId(resultAutenticar[0].fkCurso)
                                 .then((resultadoCurso) => {
                                     if(resultadoCurso.length > 0){
                                     res.json({
@@ -27,7 +27,7 @@ function autenticar(req, res){
                                         nome: resultAutenticar[0].nome,
                                         senha: resultAutenticar[0].senha,
                                         cpf: resultAutenticar[0].cpf,
-                                        curso: resultadoCurso
+                                        fkCurso: resultAutenticar[0].fkCurso
                                     });
                                 } else{
                                     res.status(204).json({ curso:[]});
@@ -57,6 +57,7 @@ function cadastrar(req, res){
     var celular = req.body.celularServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    var fkCurso = req.body.fkCursoServer;
 
     // Faça as validações dos valores
     if(nome == undefined){
@@ -71,7 +72,7 @@ function cadastrar(req, res){
         res.status(400).send("Seu senha está undefined!");        
     } else{
         // Passe os valores como parâmetro e vá para o arquivo AlunoModel.js
-        alunoModel.cadastrar(nome, cpf, celular, email, senha)
+        alunoModel.cadastrar(nome, cpf, celular, email, senha, fkCurso)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -83,11 +84,10 @@ function cadastrar(req, res){
                         "\nHouve um erro ao realizar o cadastro! Erro: ",
                         erro.sqlMessage
                     );
-                    res.status(500).json(erro.sqlMessage);
+                    res.status(3000).json(erro.sqlMessage);
                 }
             );
     }
-
 }
 
 module.exports = {

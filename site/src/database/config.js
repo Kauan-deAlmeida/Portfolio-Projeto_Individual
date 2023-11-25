@@ -27,7 +27,7 @@ var mysqlConfig = {
 
 function executar(instrucao){
     // VERIFICA A VARIÁVEL DE AMBIENTE SETADA EM app.js
-    if (ProcessingInstruction.env.AMBIENTE_PROCESSO == "producao"){
+    if (process.env.AMBIENTE_PROCESSO == "producao"){
         return new Promise(function (resolve, reject){
             sql.connect(sqlServerConfig).then(function () {
                 return sql.query(instrucao);
@@ -46,7 +46,7 @@ function executar(instrucao){
         return new Promise(function (resolve, reject) {
             var conexao = mysql.createConnection(mysqlConfig);
             conexao.connect();
-            conexao.quedy(instrucao, function (erro, resultados){
+            conexao.query(instrucao, function (erro, resultados){
                 conexao.end();
                 if(erro){
                     reject(erro);
