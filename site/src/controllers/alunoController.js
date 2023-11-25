@@ -22,9 +22,9 @@ function autenticar(req, res){
                                 .then((resultadoCurso) => {
                                     if(resultadoCurso.length > 0){
                                     res.json({
-                                        id: resultAutenticar[0].id,
+                                        idAluno: resultAutenticar[0].idAluno,
                                         email: resultAutenticar[0].email,
-                                        nome: resultAutenticar[0].nome,
+                                        nomeAluno: resultAutenticar[0].nomeAluno,
                                         senha: resultAutenticar[0].senha,
                                         cpf: resultAutenticar[0].cpf,
                                         fkCurso: resultAutenticar[0].fkCurso

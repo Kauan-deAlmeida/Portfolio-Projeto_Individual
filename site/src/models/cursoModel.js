@@ -1,7 +1,7 @@
 var database = require("../database/config");
 
 function buscarPorId(fkCurso){
-    var query = `select * from curso where id = '${fkCurso}'`;
+    var query = `select * from curso where idCurso = '${fkCurso}'`;
 
     return database.executar(query);
 }

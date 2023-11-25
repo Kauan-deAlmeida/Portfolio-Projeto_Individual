@@ -74,17 +74,15 @@
                 console.log(resposta);
 
                 resposta.json().then(json => {
-                    console.log(json);
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.NOME_USUARIO = json.nomeAluno;
                     sessionStorage.CPF_USUARIO = json.cpf;
-                    sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.CURSO = JSON.stringify(json.curso)
+                    sessionStorage.ID_USUARIO = json.idAluno;
 
                     setTimeout(function () {
                         window.location = "./dashboard/dashboard.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 500); // apenas para exibir o loading
 
                 });
 
