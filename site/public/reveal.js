@@ -49,7 +49,7 @@ revelar.reveal('.scrollLeftForRigth',
 
 // Pagina Cadastro e Login
 // Tela de Cadastro e Login
-revelar.reveal('.cadastroScrollReveal',
+revelar.reveal('.cadastroLogi_ScrollReveal',
 {
     origin: 'rigth',
     distance: '70px',
