@@ -20,8 +20,7 @@ CREATE TABLE Curso(
 CREATE TABLE Aluno(
     idAluno INT PRIMARY KEY AUTO_INCREMENT,
     nomeAluno VARCHAR(45),
-    cpf CHAR(11),
-    celular CHAR(11),
+    celular char(11),
     email VARCHAR(45),
     senha VARCHAR(20),
     fkCurso INT,

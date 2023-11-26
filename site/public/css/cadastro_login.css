@@ -50,13 +50,13 @@
     border-radius: 0px 40px 40px 0px;
     color: #fff;
     flex-wrap: wrap;
-}
+}   
 
 .voltar_para_home{
     width: 250px;
     height: 40px;
-    padding: 10px 20px;
-    margin-bottom: 50px;
+    padding: 0px 20px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
@@ -73,9 +73,9 @@
 
 .formulario input{
     border-radius: 20px;
-    padding-left: 10px;
     width: 150px;
     height: 25px;
+    text-align: center;
 }
 
 .formulario a{

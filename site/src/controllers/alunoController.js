@@ -22,10 +22,10 @@ function autenticar(req, res){
                                     if(resultadoCurso.length > 0){
                                     res.json({
                                         idAluno: resultAutenticar[0].idAluno,
-                                        email: resultAutenticar[0].email,
                                         nomeAluno: resultAutenticar[0].nomeAluno,
+                                        celular: resultAutenticar[0].celular,
+                                        email: resultAutenticar[0].email,
                                         senha: resultAutenticar[0].senha,
-                                        cpf: resultAutenticar[0].cpf,
                                         fkCurso: resultAutenticar[0].fkCurso
                                     });
                                 } else{
@@ -52,7 +52,6 @@ function cadastrar(req, res){
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
 
     var nome = req.body.nomeServer;
-    var cpf = req.body.cpfServer;
     var celular = req.body.celularServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -61,8 +60,6 @@ function cadastrar(req, res){
     // Faça as validações dos valores
     if(nome == undefined){
         res.status(400).send("Seu nome está undefined!");
-    } else if(cpf == undefined){
-        res.status(400).send("Seu cpf está undefined!");
     } else if(celular == undefined){
         res.status(400).send("Seu celular está undefined!");        
     } else if(email == undefined){
@@ -71,7 +68,7 @@ function cadastrar(req, res){
         res.status(400).send("Seu senha está undefined!");        
     } else{
         // Passe os valores como parâmetro e vá para o arquivo AlunoModel.js
-        alunoModel.cadastrar(nome, cpf, celular, email, senha, fkCurso)
+        alunoModel.cadastrar(nome, celular, email, senha, fkCurso)
             .then(
                 function (resultado) {
                     res.json(resultado);

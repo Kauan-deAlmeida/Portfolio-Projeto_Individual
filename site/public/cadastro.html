@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +27,9 @@
                 <b>Nome:<br></b>
                 <input id="nome_input" type="text" placeholder="Nome usuario"><br>
 
+                <b>Celular:<br></b>
+                <input id="celular_input" type="phone" placeholder="(11)99999-9999" maxlength="11"><br>
+
                 <b>Email:<br></b>
                 <input id="email_input" type="email" placeholder="exemplo@gmail.com"><br>
             
@@ -49,11 +52,13 @@
 
 <script>
 
+    var mensagemErro = ``;
     function cadastrar(){
         // aguardar();
         // Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
+        var celularVar = celular_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmarSenhaVar = confirmar_senha_input.value;
@@ -61,53 +66,30 @@
         
         if(
             nomeVar == "" &&
+            celularVar == "" &&
             emailVar == "" &&
             senhaVar == "" &&
             confirmarSenhaVar == ""
         ){         
-            cardErro.style.display = "block";
-             mensagem_erro.innerHTML =
-            "(Mensagem de erro para todos os campos em branco)";
-    
-            finalizarAguardar();
-            return false;
-        } 
-
-        if(nomeVar.length < 1){
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML =
-            "Nome não foi preenchido";
-
-            finalizarAguardar();
-            return false;
-        } 
-        
-        else if(emailVar.indexOf('@') > emailVar.indexOf('.com') || emailVar.endsWith('.com') == false || emailVar.length < 1){
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML =
-            "Email invalido, informe um novo email";
-            
-            finalizarAguardar();
-            return false;
-        } 
-        else if(senhaVar.length < 6){
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML =
-            "Senha muito curta";
-            
-            finalizarAguardar();
-            return false;
-        } 
-        else if(confirmarSenhaVar != senhaVar){
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML =
-            "Confimar senha está diferente da senha";
-            
-            finalizarAguardar();
-            return false;
-        } 
-        else{
-            setInterval(sumirMensagem, 5000);
+             mensagemErro = "(Mensagem de erro para todos os campos em branco)";
+             erroCadastrar();
+        } else if(nomeVar.length < 1){
+            mensagemErro = "Nome não foi preenchido";
+            erroCadastrar();
+        } else if(celularVar.length != 11){
+            mensagemErro = "Celular invalido, verifique se faltam algum digitos";
+            erroCadastrar();
+        } else if(emailVar.indexOf('@') > emailVar.indexOf('.com') || emailVar.endsWith('.com') == false || emailVar.length < 1){
+            mensagemErro = "Email invalido, informe um novo email";
+            erroCadastrar();
+        } else if(senhaVar.length < 6){
+            mensagemErro = "Senha muito curta";
+            erroCadastrar();
+        } else if(confirmarSenhaVar != senhaVar){
+            mensagemErro = "Confimar senha está diferente da senha";
+            erroCadastrar();
+        } else{
+            setInterval(sumirMensagem, 1000);
         }
 
         // Enviando o valor da nova input
@@ -120,6 +102,7 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/aluno.js
                 nomeServer: nomeVar,
+                celularServer: celularVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
                 confirmarSenhaServer: confirmarSenhaVar,
@@ -155,6 +138,13 @@
 
     function sumirMensagem() {
         cardErro.style.display = "none";
+    }
+
+    function erroCadastrar(){
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = mensagemErro;
+        finalizarAguardar();
+        return false;
     }
 
 </script>

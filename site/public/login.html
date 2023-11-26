@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +10,15 @@
 <body>
 
     <div class="banner">
-            <div class="navbar cadastroLogi_ScrollReveal">   
-                <div class="gradientNavbar">
-                    <div class="alerta_erro">
-                        <div class="card_erro" id="cardErro">
-                            <span id="mensagem_erro"></span>
-                        </div>
-                    </div>                
-                </div> 
-            </div>
+        <div class="navbar cadastroLogi_ScrollReveal">   
+            <div class="gradientNavbar">
+                <div class="alerta_erro">
+                    <div class="card_erro" id="cardErro">
+                        <span id="mensagem_erro"></span>
+                    </div>
+                </div>                
+            </div> 
+        </div>
             
             <div class="formulario cadastroLogi_ScrollReveal">
                 <div class="voltar_para_home paginaLogin">
@@ -80,7 +80,7 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nomeAluno;
-                    sessionStorage.CPF_USUARIO = json.cpf;
+                    sessionStorage.CELULAR_USUARIO = json.celular;
                     sessionStorage.ID_USUARIO = json.idAluno;
 
                     setTimeout(function () {
@@ -95,6 +95,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
+                    mensagem_erro.innerHTML = "(Email ou senha invalido)";
                     finalizarAguardar(texto);
                 });
             }
