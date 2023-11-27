@@ -6,11 +6,13 @@
     <title>Dashboard - TeamArt</title>
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
-<body>
+<body onload="validarSessao()">
     <div class="perfil">
         <div class="usuario">
             <h2>Team Art</h2>
-            <h2 id="usuario">Olá, <br>Nome Usuario</h2>
+            <h2>RA:</h2><br>
+            <span id="ra_usuario_span">ra</span>
+            <h2 id="usuario">Olá, <br><span id="nome_usuario_span">Nome Usuario</span></h2>
         </div>
 
         <div class="funcoesCurso">
@@ -114,3 +116,8 @@
 <script src="dashboard.js"></script>
 </body>
 </html>
+
+<script>
+    nome_usuario_span.innerHTML = sessionStorage.NOME_USUARIO;
+    ra_usuario_span.innerHTML = sessionStorage.ID_USUARIO;
+</script>
