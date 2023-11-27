@@ -14,18 +14,22 @@
         </div>
 
         <div class="funcoesCurso">
-            <p class="painel" id="inicio">Inicio</p>
+            <p class="painel" id="inicio" onclick="inicio()">Inicio</p>
             <p class="painel" id="descricao">Descrição</p>
             <p class="painel" id="configuracao">Configuração</p>
         </div>
         <div id="sair">
-            <p>Sair</p>
+            <a href="../login.html"><p>Sair</p></a>
         </div>
     </div>
             
     <div id="banner" class="banner">
         <div class="container">
-            <p>Porcentagem de aulas: </p>
+            <p>Porcentagem de curso: </p>
+            <span id="porcentagem">0%</span>
+                <div class="barra">
+                    <div class="barraPorcentagem"></div>
+                </div>
         </div>
         <div id="boxes" class="boxes">
             <!-- Aulas de 1 á 4 -->

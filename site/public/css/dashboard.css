@@ -8,7 +8,6 @@ body{
     background: linear-gradient(90deg, rgba(19, 48, 96, 1) 0%, rgba(79, 37, 118, 1) 25%, rgba(119, 11, 114, 1) 68%, rgba(69, 4, 63, 1) 100%);
     width: 100%;
     display: flex;
-
 }
 
 /* Parte do perfil, onde tera as configurações e perfil do usuário */
@@ -55,15 +54,35 @@ body{
     }
 }
 
+/* Barra de prograsso do usuario */
+.barra{
+    width: 70%;
+    height: 25px;
+    border-radius: 25px;
+    background-color: #aaa;
+    margin-top: 5px;
+}
+
+.barra .barraPorcentagem{
+    height: 100%;
+    border-radius: 25px; 
+    background-color: rgb(105, 105, 234);
+}
+
 /* Porcentagem de quanto já fez o curso */
 .container{
     width: 95%;
     height: 30px;
     border-radius: 40px 40px 0px 0px;
     background-color: #dfdfdf;
-
+    display: flex;
+    align-items: center;
     & p{
-        padding: 10px 50px;
+        margin-left: 30px;
+    }
+    & span{
+        width: 35px;
+        padding: 15px;
     }
 }
 
@@ -121,4 +140,17 @@ body{
 
 .boxes iframe{
     padding: 30px;
+}
+
+/* Videos das aulas depois do acesasr os video */
+.videoAula{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.videoAula #test{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }

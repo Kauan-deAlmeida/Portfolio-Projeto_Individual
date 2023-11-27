@@ -43,16 +43,15 @@
 
 <script>
 
+    var mensagemErro = ``;
     function entrar(){
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
         if(emailVar == "" || senhaVar == ""){
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Email ou senha invalido)";
-            finalizarAguardar();
-            return false;
+            mensagemErro = "(Email ou senha não preenchidas)";
+            erroPorNaoConseguirFazerLogin();
         }
         else {
             setInterval(sumirMensagem, 5000)
@@ -92,10 +91,10 @@
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
-
+                mensagemErro = "(Email ou senha invalido)";
+                erroPorNaoConseguirFazerLogin()
                 resposta.text().then(texto => {
                     console.error(texto);
-                    mensagem_erro.innerHTML = "(Email ou senha invalido)";
                     finalizarAguardar(texto);
                 });
             }
@@ -112,9 +111,9 @@
     }
 
     function erroPorNaoConseguirFazerLogin(){
-        cardsErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = mensagemErro;
+        finalizarAguardar();
         return false;
-        aguardar();
     }
 </script>
