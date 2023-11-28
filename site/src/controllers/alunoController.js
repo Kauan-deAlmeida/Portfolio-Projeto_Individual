@@ -21,7 +21,7 @@ function autenticar(req, res){
                                 .then((resultadoCurso) => {
                                     if(resultadoCurso.length > 0){
                                     res.json({
-                                        idAluno: resultAutenticar[0].idAluno,
+                                        ra: resultAutenticar[0].ra,
                                         nomeAluno: resultAutenticar[0].nomeAluno,
                                         celular: resultAutenticar[0].celular,
                                         email: resultAutenticar[0].email,
@@ -50,12 +50,15 @@ function autenticar(req, res){
 
 function cadastrar(req, res){
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-
+    var ra = req.body.raServer;
     var nome = req.body.nomeServer;
     var celular = req.body.celularServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
     var fkCurso = req.body.fkCursoServer;
+
+    // idAluno para inserir na tabela Progresso
+    var progresso = req.body.progressoAlunoServer;
 
     // Faça as validações dos valores
     if(nome == undefined){
@@ -68,7 +71,7 @@ function cadastrar(req, res){
         res.status(400).send("Seu senha está undefined!");        
     } else{
         // Passe os valores como parâmetro e vá para o arquivo AlunoModel.js
-        alunoModel.cadastrar(nome, celular, email, senha, fkCurso)
+        alunoModel.cadastrar(ra, nome, celular, email, senha, fkCurso, progresso)
             .then(
                 function (resultado) {
                     res.json(resultado);

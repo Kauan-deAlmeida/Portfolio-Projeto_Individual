@@ -9,6 +9,7 @@ function validarSessao() {
     if (email != null && nome != null) {
         nome_usuario_span.innerHTML = nome;
         ra_usuario_span.innerHTML = ra;
+        
     } else {
         window.location = "../login.html";
     }

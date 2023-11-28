@@ -57,6 +57,7 @@
         // aguardar();
         // Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
+        var raVar = parseInt(Math.random() * 900000);
         var nomeVar = nome_input.value;
         var celularVar = celular_input.value;
         var emailVar = email_input.value;
@@ -91,7 +92,7 @@
         } else{
             setInterval(sumirMensagem, 1000);
         }
-
+        var progressoAluno = 0;
         // Enviando o valor da nova input
         fetch("/aluno/cadastrar", {
             method: "POST",
@@ -101,12 +102,16 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/aluno.js
+                raServer: raVar,
                 nomeServer: nomeVar,
                 celularServer: celularVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
                 confirmarSenhaServer: confirmarSenhaVar,
-                fkCursoServer: fkCursoVar
+                fkCursoServer: fkCursoVar,
+
+                // Valor para tabela Progresso
+                progressoAlunoServer: progressoAluno
             })
         })
         .then(function (resposta){
