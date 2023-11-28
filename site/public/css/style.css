@@ -154,7 +154,6 @@ body {
     margin-left: -220px;
     border-radius: 50px;
     padding: 90px 30px 0px 30px;
-    opacity: 0.5;
     background-color: #fff;
     position: relative;
     -webkit-clip-path: polygon(0 0, 100% 15%, 100% 80%, 0 100%);
@@ -179,7 +178,6 @@ body {
     height: 520px;
     border-radius: 20px;
     position: absolute;
-    opacity: 0.7;
     margin-left: 300px;
     box-shadow: #000 40px 40px 10px;
 }
@@ -190,6 +188,7 @@ body {
 /*  */
 .banner .container p {
     text-align: justify;
+    font-size: 19px;
 }
 /*  */
 .figuraPagTransacao {
@@ -289,22 +288,45 @@ body {
 /*  */
 .explanation .exemplos .descricaoCurso .descricaoCursoTexto {
     width: 50%;
+    color: #fff
 }
 /*  */
 .explanation .exemplos .descricaoCurso .descricaoCursoTexto h1 {
     font-size: 40px;
-    color: #fff;
+    margin: 0 0 10px 0;
+    color: turquoise
 }
 /*  */
-.explanation .exemplos .descricaoCurso .descricaoCursoTexto h2 {
+.explanation .exemplos .descricaoCurso .descricaoCursoTexto p {
     text-align: justify;
-    list-style: none;
+    font-size: 20px;
+}
+
+.explanation .exemplos .descricaoCurso .descricaoCursoTexto img{
+    width: 270px;
+    height: 120px;
+    margin-left: 15px;
 }
 /*  */
 .explanation .exemplos .descricaoCurso img {
     width: 300px;
     height: 400px;
     border-radius: 30px;
+}
+
+/* Estilizando texto referente ao pilares da ONU */
+.explanation .exemplos .descricaoCurso .pilarOnu{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pilarOnu img{
+    box-shadow: #000 5px 5px 10px;
+    transition: 0.5s;
+}
+.pilarOnu img:hover{
+    transform: scale(1.05)
 }
 /*  */
 .explanation .exemplos .content {
@@ -374,6 +396,12 @@ body {
 .exemplos .content p {
     color: #fff;
     text-align: justify;
+    font-size: 20px;
+    background-color: rgba(31, 153, 183, 0.5);
+    /* backdrop-filter: blur(6px); */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: #000 10px 10px 10px;
 }
 /*  */
 .boxDescribe {
@@ -399,6 +427,14 @@ body {
         display: block;
     }
 }
+
+/* Destaque para conteúdo que fala sobre o curso*/
+.conteudoCurso{    
+    color: rgb(255, 166, 0);
+    -webkit-text-stroke: 1px #282828;
+	text-shadow: 2px 5px 5px #282828;
+}
+
 /*  */
 .describe {
     width: 50%;
@@ -425,7 +461,7 @@ body {
 /*  */
 .aboutMeAll {
     width: 100%;
-    height: 600px;
+    height: 810px;
     display: flex;
     justify-content: center;
 }

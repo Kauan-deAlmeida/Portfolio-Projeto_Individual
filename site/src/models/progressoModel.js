@@ -20,7 +20,6 @@ function atualizarProgresso(ra, progresso){
     return database.executar(instrucao)
 }
 
-
 module.exports = {
     atualizarProgresso,
     mostrarProgresso

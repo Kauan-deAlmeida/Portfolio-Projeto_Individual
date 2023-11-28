@@ -18,7 +18,7 @@ CREATE TABLE Curso(
 );
 
 CREATE TABLE Aluno(
-    RA INT PRIMARY KEY,
+    idAluno INT PRIMARY KEY AUTO_INCREMENT,
     nomeAluno VARCHAR(45),
     celular char(11),
     email VARCHAR(45),
@@ -30,7 +30,7 @@ CREATE TABLE Aluno(
 CREATE TABLE ProgressoAluno(
     idProgresso INT AUTO_INCREMENT,
     fkAluno INT,
-    CONSTRAINT fkIdAluno FOREIGN KEY (fkAluno) REFERENCES Aluno(RA),
+    CONSTRAINT fkIdAluno FOREIGN KEY (fkAluno) REFERENCES Aluno(idAluno),
     PRIMARY KEY (idProgresso, fkAluno),
     Progresso INT
 );
