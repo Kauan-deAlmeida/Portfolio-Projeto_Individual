@@ -28,10 +28,8 @@ CREATE TABLE Aluno(
 );
 
 CREATE TABLE ProgressoAluno(
-    idProgresso INT AUTO_INCREMENT,
-    fkAluno INT,
+    fkAluno INT PRIMARY KEY,
     CONSTRAINT fkIdAluno FOREIGN KEY (fkAluno) REFERENCES Aluno(idAluno),
-    PRIMARY KEY (idProgresso, fkAluno),
     Progresso INT
 );
 

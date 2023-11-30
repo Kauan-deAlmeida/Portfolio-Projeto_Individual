@@ -26,7 +26,8 @@ function autenticar(req, res){
                                         celular: resultAutenticar[0].celular,
                                         email: resultAutenticar[0].email,
                                         senha: resultAutenticar[0].senha,
-                                        fkCurso: resultAutenticar[0].fkCurso
+                                        fkCurso: resultAutenticar[0].fkCurso,
+
                                     });
                                 } else{
                                     res.status(204).json({ curso:[]});
