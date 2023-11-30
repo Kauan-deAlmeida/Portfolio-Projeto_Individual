@@ -106,6 +106,26 @@ body{
     }
 }
 
+/* Botão de mudar a cor de fundo */
+
+.mudarCor{
+    width: 50px;
+    height: 20px;
+    border-radius: 30px;
+    background-color: rgb(255, 0, 0);
+    margin-left: 10px;
+    display: flex;
+
+}
+
+.mudarCor .corFundo{
+    width: 50%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: white;
+    cursor: pointer;
+}
+
 /* Parte que fica os videos em Blocos */
 
 .banner{

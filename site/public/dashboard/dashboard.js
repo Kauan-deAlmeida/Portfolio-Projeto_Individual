@@ -1,3 +1,29 @@
+var corFundoBarra = document.querySelector(".container")
+var corFundoBanner = document.querySelector(".boxes")
+var corLetra = document.querySelector("body")
+var positionBottom = document.querySelector(".mudarCor")
+var corBottom = document.querySelector(".corFundo")
+var clique = 0
+
+function tema(){
+        if(clique == 0){
+            clique += 1
+            corFundoBarra.setAttribute("style", "background-color: #505050");
+            corFundoBanner.setAttribute("style", "background-color: #505050");
+            corLetra.setAttribute("style", "color: #fff");
+            positionBottom.setAttribute("style", "flex-direction: row-reverse");
+            corBottom.setAttribute("style", "background-color: #505050");
+        }
+        else{
+            clique -= 1
+            corFundoBarra.setAttribute("style", "background-color: #dfdfdf");
+            corFundoBanner.setAttribute("style", "background-color: #dfdfdf");
+            corLetra.setAttribute("style", "color: #000");
+            positionBottom.setAttribute("style", "flex-direction: row");
+            corBottom.setAttribute("style", "background-color: #fff");
+        }
+}
+
 function abrirAula(card){
     var idVideo = card.getAttribute("data-id");
     var aulaAtual = ``;
