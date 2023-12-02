@@ -77,10 +77,12 @@
 
                 resposta.json().then(json => {
                     console.log(JSON.stringify(json));
+                    console.log(json);
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nomeAluno;
                     sessionStorage.CELULAR_USUARIO = json.celular;
-                    sessionStorage.ID_USUARIO = json.idAluno;
+                    sessionStorage.ID_USUARIO = json.ra;
+                    sessionStorage.PORCENTAGEM = json.progresso;
 
                     setTimeout(function () {
                         window.location = "./dashboard/dashboard.html";

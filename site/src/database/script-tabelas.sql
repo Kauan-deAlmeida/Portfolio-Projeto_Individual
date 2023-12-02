@@ -18,20 +18,22 @@ CREATE TABLE Curso(
 );
 
 CREATE TABLE Aluno(
-    idAluno INT PRIMARY KEY AUTO_INCREMENT,
+    ra INT PRIMARY KEY AUTO_INCREMENT,
     nomeAluno VARCHAR(45),
     celular char(11),
     email VARCHAR(45),
     senha VARCHAR(20),
     fkCurso INT,
     CONSTRAINT fkIdCurso FOREIGN KEY (fkCurso) REFERENCES Curso(idCurso)
-);
+)AUTO_INCREMENT = 1000;
 
 CREATE TABLE ProgressoAluno(
-    fkAluno INT PRIMARY KEY,
-    CONSTRAINT fkIdAluno FOREIGN KEY (fkAluno) REFERENCES Aluno(idAluno),
-    Progresso INT
+    idProgresso INT AUTO_INCREMENT,
+    fkAluno INT,
+    CONSTRAINT fkIdAluno FOREIGN KEY (fkAluno) REFERENCES Aluno(ra),
+    Progresso INT,
+    PRIMARY KEY(idProgresso, fkAluno)
 );
 
-INSERT INTO curso (titulo, descricao, data_criacao) VALUES
+INSERT INTO curso (idCurso, titulo, descricao, data_criacao) VALUES
     (1, 'Curso de desenho', 'Aulas de como desenhar realismo', now());

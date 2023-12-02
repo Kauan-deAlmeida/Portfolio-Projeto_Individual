@@ -1,13 +1,13 @@
 var progressoModel = require("../models/progressoModel");
 
-function barraProgresso(req, res){
-    var idAluno = req.body.idAlunoServer;
-    var Progresso = req.body.progressoServer;
-    
-    progressoModel.barraProgresso(idAluno, Progresso)
+    function atualizarProgresso(req, res){
+        var idAluno = req.params.idAluno;
+        var progresso = req.body.progressoServer;
+
+        progressoModel.atualizarProgresso(idAluno, progresso)
         .then(
             function (resultado) {
-                res.json(resultado);
+                res.status(203).send("Atualizado")
             }
         ) .catch(
             function (erro) {
@@ -21,6 +21,16 @@ function barraProgresso(req, res){
         );
     }
 
+    function mostrarBarra(req, res){
+        var idAluno = req.params.idAluno;
+
+        progressoModel.mostrarBarra(idAluno)
+        .then((resultado) => {
+            res.status(200).json(resultado);
+        });
+    }
+
 module.exports = {
-    barraProgresso
+    atualizarProgresso,
+    mostrarBarra
 }

@@ -12,7 +12,8 @@ function tema(){
             corFundoBanner.setAttribute("style", "background-color: #505050");
             corLetra.setAttribute("style", "color: #fff");
             positionBottom.setAttribute("style", "flex-direction: row-reverse");
-            corBottom.setAttribute("style", "background-color: #505050");
+            corBottom.setAttribute("style", "background-color: #fff");
+            // corBottom.style.backgroundColor = "#fff"
         }
         else{
             clique -= 1
@@ -20,7 +21,7 @@ function tema(){
             corFundoBanner.setAttribute("style", "background-color: #dfdfdf");
             corLetra.setAttribute("style", "color: #000");
             positionBottom.setAttribute("style", "flex-direction: row");
-            corBottom.setAttribute("style", "background-color: #fff");
+            corBottom.setAttribute("style", "background-color: #505050");
         }
 }
 
@@ -29,7 +30,7 @@ function abrirAula(card){
     var aulaAtual = ``;
     var conteudo_box_aula = `        
             <div class="videoAula">
-                <input type="checkbox" id="porcentagem_input" onclick="barraProgresso()"><p>Depois de assistir o vídeo marque como assistido para prosseguir para o próximo vídeo</p>
+                <input type="checkbox" id="porcentagem_input" onclick="setTimeout(() => barraProgresso(), 200)"><p>Depois de assistir o vídeo marque como assistido para prosseguir para o próximo vídeo</p>
         </div>
     </div>
 
@@ -236,43 +237,46 @@ function abrirAula(card){
             ${aulaAtual} 
                 ${conteudo_box_aula}`;
     }
-
 }
-var idAlunoVar = sessionStorage.ID_USUARIO
-var nome_usuario_span = document.getElementById("nome_usuario_span");
 
-var progresso = document.querySelector(".barraPorcentagem")
-var porcentagemProgresso = 0;
+function descricao(){
+    boxes.innerHTML = ``   
+}
 
-function barraProgresso() {
-        var aulaVista = porcentagem_input.checked
-        var porcentagemCadaVideo = 6.25;
+function perfil(){
+    
+    
+    
+    boxes.innerHTML = `
+    <div class="boxPerfil">
+        <div class="bannerPerfil">
+            <div class="fotoPerfil">
+                <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho09.jpeg">
+            </div><br>
+            <span>Nome: <span >${sessionStorage.NOME_USUARIO}</span></span><br>
+            
+            <span>Email: <span>${sessionStorage.EMAIL_USUARIO}</span></span><br>
 
-        valor = 1
-        if(aulaVista){
-                porcentagemProgresso += porcentagemCadaVideo;
-                porcentagemBarra.innerHTML = `${porcentagemProgresso}%`;
-                progresso.setAttribute("style", "width:" + porcentagemProgresso  + "%");
-        }
-        else{
-                porcentagemProgresso -= porcentagemCadaVideo;
-                porcentagemBarra.innerHTML = `${porcentagemProgresso}%`;
-                progresso.setAttribute("style", "width:" + porcentagemProgresso  + "%");
-                vetorProgresso.pop();
-        }    
+            <span>RA: <span id="ra_usuario_span">ra</span></span>
+        </div>
 
-        fetch("/progresso/barraProgresso", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/aluno.js
-                progressoServer: porcentagemProgresso,
-                idAlunoServer: idAlunoVar
-            })
-        })
+        <div class="bannerPostagem">
+            <div class="fotoPostada">
+                <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
+            </div>
+            <div class="fotoPostada">
+                <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
+            </div>
+            <div class="fotoPostada">
+                <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
+            </div>
+            <div class="fotoPostada">
+                <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
+            </div>
+        </div>
+    <div>
+    `
+
 }
 
 function inicio(){
@@ -355,3 +359,58 @@ function inicio(){
 </div>`
 }
 
+
+    
+var nome_usuario_span = document.getElementById("nome_usuario_span");
+
+var progresso = document.querySelector(".barraPorcentagem")
+
+var porcentagemProgresso = Number(sessionStorage.PORCENTAGEM)
+
+function barraProgresso() {
+    var aulaVista = porcentagem_input.checked
+
+    valor = 1
+    if(aulaVista){
+            porcentagemProgresso += 6.25
+            porcentagemBarra.innerHTML = `${porcentagemProgresso}%`;
+            progresso.setAttribute("style", "width:" + porcentagemProgresso  + "%");
+    }
+    else{
+            porcentagemProgresso -= 6.25;
+            porcentagemBarra.innerHTML = `${porcentagemProgresso}%`;
+            progresso.setAttribute("style", "width:" + porcentagemProgresso  + "%");
+    }    
+
+    fetch(`/progresso/atualizarProgresso/${sessionStorage.ID_USUARIO}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/aluno.js
+            progressoServer: porcentagemProgresso,
+        })
+    })
+}
+
+function mostrarBarra(){
+    var idAlunoVar = Number(sessionStorage.ID_USUARIO)
+
+    fetch(`/progresso/mostrar-barra/${idAlunoVar}`)
+        .then(res => {
+            res.json().then(res => {
+                console.log(res);
+                porcentagemBarra.innerHTML = res[0].progresso;
+                progresso.setAttribute("style", "width:" + res[0].progresso + "%");
+            })
+        })
+        
+}
+
+function sairDaConta(){
+    sessionStorage.clear()
+    window.location.href = "../login.html"
+}
+    

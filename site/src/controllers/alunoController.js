@@ -1,5 +1,6 @@
 var alunoModel = require("../models/alunoModel");
 var cursoModel = require("../models/cursoModel");
+var progressoModel = require("../models/progressoModel");
 
 function autenticar(req, res){
     var email = req.body.emailServer;
@@ -21,13 +22,13 @@ function autenticar(req, res){
                                 .then((resultadoCurso) => {
                                     if(resultadoCurso.length > 0){
                                     res.json({
-                                        idAluno: resultAutenticar[0].idAluno,
+                                        ra: resultAutenticar[0].ra,
                                         nomeAluno: resultAutenticar[0].nomeAluno,
                                         celular: resultAutenticar[0].celular,
                                         email: resultAutenticar[0].email,
                                         senha: resultAutenticar[0].senha,
                                         fkCurso: resultAutenticar[0].fkCurso,
-
+                                        progresso: resultAutenticar[0].progresso,
                                     });
                                 } else{
                                     res.status(204).json({ curso:[]});
@@ -71,7 +72,17 @@ function cadastrar(req, res){
         alunoModel.cadastrar(nome, celular, email, senha, fkCurso)
             .then(
                 function (resultado) {
-                    res.json(resultado);
+                    var ultimoIdAluno = resultado.insertId
+
+                    progressoModel.cadastrarProgresso(ultimoIdAluno, 0)
+                    .then(() => {
+                        res.status(201).send("Aluno cadastrado com sucesso")
+                    })
+                    .catch(
+                        function (erro){
+                            console.log(erro);
+                        }
+                    )
                 }
             ) .catch(
                 function (erro) {
