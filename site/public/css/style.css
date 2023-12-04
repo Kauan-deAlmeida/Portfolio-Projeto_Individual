@@ -534,33 +534,35 @@ body {
     height: 190px;
 }
 
-/* Roda pé */
+/* Abertura - Roda pé */
 .footer{
     width: 100%;
-    height: auto;
+    height: 300px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: rgb(3, 3, 82);
     color: #fff;
+    & h2{
+        margin-top: 20px;
+    }
 }
 
-/*  */
 .version{
-    padding-top: 30px;
-    width: 200px;
-    height: 100px;
+    width: 80%;
+    height: 70%;
+    display: flex;
+    
 }
 
-.version button{
-    border-radius: 20px;
-    width: 50px;
-    background-color: teal;
-    cursor: pointer;
-    color: #fff;
+.footerLinkagem{
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.version button:hover{
-    background-color: rgb(4, 79, 79);
-}
+/* Fechamento - Roda pé */
 

@@ -53,11 +53,19 @@
 }   
 
 .voltar_para_home{
-    width: 250px;
+    width: 100%;
     height: 40px;
-    padding: 0px 20px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    display: flex;
     text-align: center;
+    & a{
+        width: 50px;
+    }
+}
+.voltar_para_home h1{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
 }
 
 .voltar_para_home img{

@@ -257,7 +257,7 @@ function perfil(){
             
             <span>Email: <span>${sessionStorage.EMAIL_USUARIO}</span></span><br>
 
-            <span>RA: <span id="ra_usuario_span">ra</span></span>
+            <span>RA: <span>${sessionStorage.ID_USUARIO}</span></span>
         </div>
 
         <div class="bannerPostagem">
@@ -407,10 +407,5 @@ function mostrarBarra(){
             })
         })
         
-}
-
-function sairDaConta(){
-    sessionStorage.clear()
-    window.location.href = "../login.html"
 }
     
