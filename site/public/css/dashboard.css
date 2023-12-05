@@ -320,13 +320,15 @@ body{
     /* display: flex;
     justify-content: center; */
     & input{
-        width: 80px;
+        width: 150px;
+        height: 23px;
         margin: 10px;
         border-radius: 10px;
         border: solid 1px #000;
     }
     & button{
         width: 70px;
+        height: 23px;
         border-radius: 10px;
         background-color: teal;
         color: #fff;

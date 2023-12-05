@@ -219,6 +219,8 @@ function descricao(){
 }
 
 function inicio(){
+    inicioUser.style.backgroundColor = "rgba(000, 000, 255, 0.2)"
+    perfilUser.style.backgroundColor = "rgba(000, 000, 255, 0)"
         boxes.innerHTML = `
         <div class="box">
             <div data-id="1" onclick="abrirAula(this)" class="cards">
@@ -300,6 +302,8 @@ function inicio(){
 }
 
 function perfil(){ 
+    perfilUser.style.backgroundColor = "rgba(000, 000, 255, 0.2)"
+    inicioUser.style.backgroundColor = "rgba(000, 000, 255, 0)"
     boxes.innerHTML = `
     <div class="boxPerfil">
         <div class="bannerPerfil">
@@ -317,11 +321,11 @@ function perfil(){
                 <button onclick="cadastrarImagem()">Enviar</button>
             </div>
             <div id="avaliacao">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela1" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela2" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela3" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela4" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela5" onclick="cadastrarAvaliacao()">
+                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="1" onclick="cadastrarAvaliacao(this)">
+                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="2" onclick="cadastrarAvaliacao(this)">
+                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="3" onclick="cadastrarAvaliacao(this)">
+                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="4" onclick="cadastrarAvaliacao(this)">
+                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="5" onclick="cadastrarAvaliacao(this)">
             </div>
         </div>
 
@@ -343,42 +347,49 @@ function perfil(){
     `
 }
 
-clique = 0
-function cadastrarAvaliacao(){
-    var estrelaDourada = `<img src="../assets/imgs/avaliacao.webp"`
-    if(clique == 0){
+function cadastrarAvaliacao(card){
+    var idEstrelas = card.getAttribute("star-id");
+    var estrelaDourada = `<img src="../assets/imgs/avaliacao.webp">`
+    var estrelaPrata = `<img src="../assets/imgs/avaliacao_N_Marcada.png">`
+    if(idEstrelas == 1){
         avaliacao.innerHTML = `
-                ${estrelaDourada}>
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela2" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela3" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela4" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela5" onclick="cadastrarAvaliacao()">
+                ${estrelaDourada}
+                ${estrelaPrata}
+                ${estrelaPrata}
+                ${estrelaPrata}
+                ${estrelaPrata}
             `;
-    } else if(clique = 1){
+    } else if(idEstrelas == 2){
         avaliacao.innerHTML = `
-                ${estrelaDourada}>
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela2" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela3" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela4" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela5" onclick="cadastrarAvaliacao()">
+                ${estrelaDourada}
+                ${estrelaDourada}
+                ${estrelaPrata}
+                ${estrelaPrata}
+                ${estrelaPrata}
             `;
-    } else if(clique = 1){
+    } else if(idEstrelas == 3){
         avaliacao.innerHTML = `
-                ${estrelaDourada}>
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela2" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela3" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela4" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela5" onclick="cadastrarAvaliacao()">
+                ${estrelaDourada}
+                ${estrelaDourada}
+                ${estrelaDourada}
+                ${estrelaPrata}
+                ${estrelaPrata}
             `;
-    } else if(clique = 1){
+    } else if(idEstrelas == 4){
         avaliacao.innerHTML = `
-                ${estrelaDourada}>
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela2" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela3" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela4" onclick="cadastrarAvaliacao()">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela5" onclick="cadastrarAvaliacao()">
+                ${estrelaDourada}
+                ${estrelaDourada}
+                ${estrelaDourada}
+                ${estrelaDourada}
+                ${estrelaPrata}
             `;
     } else{
-
+        avaliacao.innerHTML = `
+                ${estrelaDourada}
+                ${estrelaDourada}
+                ${estrelaDourada}
+                ${estrelaDourada}
+                ${estrelaDourada}
+            `;                
     }
 }
