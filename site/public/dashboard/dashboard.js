@@ -393,3 +393,7 @@ function cadastrarAvaliacao(card){
             `;                
     }
 }
+
+function cadastrarPost(){
+    
+}
