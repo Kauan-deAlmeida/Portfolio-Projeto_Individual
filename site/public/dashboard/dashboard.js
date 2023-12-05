@@ -312,7 +312,9 @@ function perfil(){
 
             <span>RA: <span>${sessionStorage.ID_USUARIO}</span></span>
             <div class="uploadFoto">
-                Titulo do post: <input type="text" id="input_imagem"><button onclick="cadastrarImagem()">Enviar</button>
+                Titulo do post: <br><input type="text" id="input_titulo"><br>
+                URL da imagem: <br><input type="text" id="input_img"><br>
+                <button onclick="cadastrarImagem()">Enviar</button>
             </div>
             <div id="avaliacao">
                 <img src="../assets/imgs/avaliacao_N_Marcada.png" id="input_estrela1" onclick="cadastrarAvaliacao()">
