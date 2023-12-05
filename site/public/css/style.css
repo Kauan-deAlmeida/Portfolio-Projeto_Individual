@@ -585,6 +585,5 @@ body {
 /* Fechamento - Roda pé */
 
 ul a:hover {
-    transform: scale(1.5);
     color: orange;
 }
