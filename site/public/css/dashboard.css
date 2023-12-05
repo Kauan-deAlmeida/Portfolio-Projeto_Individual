@@ -194,7 +194,7 @@ body{
     cursor: pointer;
 }
 
-/*Apos JS - Estilizando imagens para abrir as video aulas */
+/*Abertura - Apos JS - Estilizando imagens para abrir as video aulas */
 
 .aulas{
     width: 100%;
@@ -237,6 +237,7 @@ body{
     cursor: pointer;
     filter: brightness(60%);
 }
+/* Fechamento */
 
 /* Perfil para blooker */
 

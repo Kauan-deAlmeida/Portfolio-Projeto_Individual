@@ -63,7 +63,6 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmarSenhaVar = confirmar_senha_input.value;
-        var fkCursoVar = 1;
         
         if(
             nomeVar == "" &&
@@ -106,8 +105,7 @@
                 celularServer: celularVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                confirmarSenhaServer: confirmarSenhaVar,
-                fkCursoServer: fkCursoVar,
+                confirmarSenhaServer: confirmarSenhaVar
             })
         })
         .then(function (resposta){

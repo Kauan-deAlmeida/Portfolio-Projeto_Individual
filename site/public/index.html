@@ -6,6 +6,7 @@
     <title>TeamArt</title>
     <script src="./js/sessao.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -196,6 +197,10 @@
                 <span class="desenho08">
                     <img src="assets/imgs/Desenhos_do_Sobre_Mim/desenho08.jpeg" alt="">
                 </span>    
+                <div class="chartAvaliacao">
+                    <h1>Avaliações do curso</h1>
+                    <canvas id="myChart" style="position: relative; height: 286px; width: 614px; display: block; box-sizing: border-box;" width="767" height="357"></canvas>
+                </div>
             </div>
     </div>
     <!-- </div> -->
@@ -235,6 +240,7 @@
             </div>
         </div>
     <!--  -->
+    <script src="chart.js"></script>
     <script src="reveal.js"></script>
     <script src="main.js"></script>
 </body>

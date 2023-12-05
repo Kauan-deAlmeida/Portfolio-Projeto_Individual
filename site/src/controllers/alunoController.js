@@ -1,6 +1,13 @@
 var alunoModel = require("../models/alunoModel");
-var cursoModel = require("../models/cursoModel");
 var progressoModel = require("../models/progressoModel");
+
+function buscarPorId(req, res){
+    var idAluno = req.params.idAluno;
+
+    alunoModel.buscarPorId(idAluno).then((resultado) => {
+        res.status(200).json(resultado);
+    })
+}
 
 function autenticar(req, res){
     var email = req.body.emailServer;
@@ -18,7 +25,7 @@ function autenticar(req, res){
                         if (resultAutenticar.length == 1){
                             console.log(resultAutenticar);
 
-                            cursoModel.buscarPorId(resultAutenticar[0].fkCurso)
+                            alunoModel.buscarPorId(resultAutenticar[0].ra)
                                 .then((resultadoCurso) => {
                                     if(resultadoCurso.length > 0){
                                     res.json({
@@ -27,7 +34,6 @@ function autenticar(req, res){
                                         celular: resultAutenticar[0].celular,
                                         email: resultAutenticar[0].email,
                                         senha: resultAutenticar[0].senha,
-                                        fkCurso: resultAutenticar[0].fkCurso,
                                         progresso: resultAutenticar[0].progresso,
                                     });
                                 } else{
@@ -56,7 +62,6 @@ function cadastrar(req, res){
     var celular = req.body.celularServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var fkCurso = req.body.fkCursoServer;
 
     // Faça as validações dos valores
     if(nome == undefined){
@@ -69,7 +74,7 @@ function cadastrar(req, res){
         res.status(400).send("Seu senha está undefined!");        
     } else{
         // Passe os valores como parâmetro e vá para o arquivo AlunoModel.js
-        alunoModel.cadastrar(nome, celular, email, senha, fkCurso)
+        alunoModel.cadastrar(nome, celular, email, senha)
             .then(
                 function (resultado) {
                     var ultimoIdAluno = resultado.insertId
@@ -99,6 +104,7 @@ function cadastrar(req, res){
 
 
 module.exports = {
+    buscarPorId,
     autenticar,
     cadastrar,
 }

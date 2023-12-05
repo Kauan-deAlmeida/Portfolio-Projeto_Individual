@@ -458,10 +458,10 @@ body {
     opacity: 0.8;
     margin-top: 50px;
 }
-/*  */
+/* Abertura - Estilizando div "Sobre mim" */
 .aboutMeAll {
     width: 100%;
-    height: 810px;
+    height: 850px;
     display: flex;
     justify-content: center;
 }
@@ -534,6 +534,14 @@ body {
     height: 190px;
 }
 
+/* Abertura - Estilizando chart.js (Grafico) de avaliações do curso */
+.chartAvaliacao h1{
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+} 
+/* Fechamento */
+
 /* Abertura - Roda pé */
 .footer{
     width: 100%;
@@ -563,15 +571,20 @@ body {
     justify-content: center;
     padding-top: 30px;
     font-size: 20px;
-    & a, li{
+    & a{
         color: white;
         transition: 0.5s;
+        text-decoration: none;
     }
-    & li:hover{
+    /* & li:hover{
         color: orange;
         transform: scale(1.2);
-    }
+    } */
 }
 
 /* Fechamento - Roda pé */
 
+ul a:hover {
+    transform: scale(1.5);
+    color: orange;
+}

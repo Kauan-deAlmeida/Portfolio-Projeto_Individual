@@ -35,5 +35,21 @@ CREATE TABLE ProgressoAluno(
     PRIMARY KEY(idProgresso, fkAluno)
 );
 
+CREATE TABLE Post(
+	idAluno INT PRIMARY KEY AUTO_INCREMENT,
+    fkAluno INT,
+    CONSTRAINT fkIdAluno FOREIGN KEY (fkAluno) REFERENCES Aluno (ra),
+    Titulo VARCHAR(50),
+    img varchar(2000)
+);
+
+CREATE TABLE Avaliacao(
+	idAvaliacao INT PRIMARY KEY AUTO_INCREMENT,
+    nota INT,
+    check (nota = 1 OR nota = 2 OR nota = 3),
+    fkAluno INT,
+    CONSTRAINT fkRaIdAluno FOREIGN KEY (fkAluno) REFERENCES Aluno (ra)
+);
+
 INSERT INTO curso (idCurso, titulo, descricao, data_criacao) VALUES
     (1, 'Curso de desenho', 'Aulas de como desenhar realismo', now());

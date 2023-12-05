@@ -38,11 +38,13 @@ function abrirAula(card){
     <div class="cards_dos_videos">
             <div data-id="1" onclick="abrirAula(this)" class="cardsLinkandoVideo">
                 <img src="../assets/imgs/Fotos_de_Videos/foto1.webp" alt="">
-                <p>Aula 01 - Parte 1</p>
+                <p>Aula 01 - Introdução</p>
             </div>
             <div data-id="2" onclick="abrirAula(this)" class="cardsLinkandoVideo">
                 <img src="../assets/imgs/Fotos_de_Videos/foto2.jpg" alt="">
-                <p>Aula 02 - Parte 2</p>
+                <div><p>Aula 02 - </p>
+                <p>Como fazer esbolço de corpo</p>
+                </div>
             </div>
             <div data-id="3" onclick="abrirAula(this)" class="cardsLinkandoVideo">
                 <img src="../assets/imgs/Fotos_de_Videos/foto3.webp" alt="">
@@ -280,82 +282,83 @@ function perfil(){
 }
 
 function inicio(){
-        boxes.innerHTML = `<div class="box">
-        <div data-id="1" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto1.webp" alt="">
-            <p>Aula 01 - Parte 1</p>
+        boxes.innerHTML = `
+        <div class="box">
+            <div data-id="1" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto1.webp" alt="">
+                <p>Aula 01 - Introdução</p>
+            </div>
+            <div data-id="2" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto2.jpg" alt="">
+                <p>Aula 02 - Como fazer esbolço de corpo</p>
+            </div>
+            <div data-id="3" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto3.webp" alt="">
+                <p>Aula 03 - Detalhando cabelo</p>
+            </div>
+            <div data-id="4" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/Foto4.jpg" alt="">
+                <p>Aula 04 - Criando estilo de roupa</p>
+            </div>
         </div>
-        <div data-id="2" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto2.jpg" alt="">
-            <p>Aula 02 - Parte 2</p>
+        <!-- Aulas de 5 á 8 -->
+        <div class="box">
+            <div data-id="5" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto5.jpg" alt="">
+                <p>Aula 05 - Observando posições</p>
+            </div>
+            <div data-id="6" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto6.jpg" alt="">
+                <p>Aula 06 - Definindo rosto feminino Parte 1 </p>
+            </div>
+            <div data-id="7" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto7.jpg" alt="">
+                <p>Aula 07 - Definindo rosto masculino Parte 2</p>
+            </div>
+            <div data-id="8" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto8.jpg" alt="">
+                <p>Aula 08 - Criando acessorios para cabeça</p>
+            </div>
         </div>
-        <div data-id="3" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto3.webp" alt="">
-            <p>Aula 03 - Parte 3</p>
+        <!-- Aulas de 9 á 12 -->
+        <div class="box">
+            <div data-id="9" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto9.jpg" alt="">
+                <p>Aula 09 - Exercicio para treinar rosto</p>
+            </div>
+            <div data-id="10" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto10.jpg" alt="">
+                <p>Aula 10 - Proporção de rosto</p>
+            </div>
+            <div data-id="11" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto11.jpg" alt="">
+                <p>Aula 11 - Tecnicas de pintura</p>
+            </div>
+            <div data-id="12" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto12.jpg" alt="">
+                <p>Aula 12 - Esbolço de mão Parte 1</p>
+            </div>
         </div>
-        <div data-id="4" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/Foto4.jpg" alt="">
-            <p>Aula 04 - Parte 4</p>
+        <!-- Aulas de 13 á 16 -->
+        <div class="box">
+            <div data-id="13" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto13.jpg" alt="">
+                <p>Aula 13 - Detalhando mão Parte 2</p>
+            </div>
+            <div data-id="14" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto14.webp" alt="">
+                <p>Aula 14 - Implementando tecnicas Parte 3</p>
+            </div>
+            <div data-id="15" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto15.jpg" alt="">
+                <p>Aula 15 - Posições de pernas</p>
+            </div>
+            <div data-id="16" onclick="abrirAula(this)" class="cards">
+                <img src="../assets/imgs/Fotos_de_Videos/foto16.webp" alt="">
+                <p>Aula 16 - Desenhando formados de pé</p>
+            </div>
         </div>
     </div>
-    <!-- Aulas de 5 á 8 -->
-    <div class="box">
-        <div data-id="5" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto5.jpg" alt="">
-            <p>Aula 05 - Parte 5</p>
-        </div>
-        <div data-id="6" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto6.jpg" alt="">
-            <p>Aula 06 - Parte 1 </p>
-        </div>
-        <div data-id="7" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto7.jpg" alt="">
-            <p>Aula 07 - Parte 2</p>
-        </div>
-        <div data-id="8" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto8.jpg" alt="">
-            <p>Aula 08 - Parte 3</p>
-        </div>
-    </div>
-    <!-- Aulas de 9 á 12 -->
-    <div class="box">
-        <div data-id="9" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto9.jpg" alt="">
-            <p>Aula 09 - Parte 4</p>
-        </div>
-        <div data-id="10" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto10.jpg" alt="">
-            <p>Aula 10</p>
-        </div>
-        <div data-id="11" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto11.jpg" alt="">
-            <p>Aula 11</p>
-        </div>
-        <div data-id="12" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto12.jpg" alt="">
-            <p>Aula 12 - Parte 1</p>
-        </div>
-    </div>
-    <!-- Aulas de 13 á 16 -->
-    <div class="box">
-        <div data-id="13" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto13.jpg" alt="">
-            <p>Aula 13 - Parte 2</p>
-        </div>
-        <div data-id="14" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto14.webp" alt="">
-            <p>Aula 14 - Parte 3</p>
-        </div>
-        <div data-id="15" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto15.jpg" alt="">
-            <p>Aula 15</p>
-        </div>
-        <div data-id="16" onclick="abrirAula(this)" class="cards">
-            <img src="../assets/imgs/Fotos_de_Videos/foto16.webp" alt="">
-            <p>Aula 16</p>
-        </div>
-    </div>
-</div>
 </div>`
 }
 
@@ -405,7 +408,10 @@ function mostrarBarra(){
                 porcentagemBarra.innerHTML = res[0].progresso;
                 progresso.setAttribute("style", "width:" + res[0].progresso + "%");
             })
-        })
-        
+        })       
+}
+
+function cadastrarAvaliacao(req, res){
+    
 }
     

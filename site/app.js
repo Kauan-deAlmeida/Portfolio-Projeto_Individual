@@ -10,7 +10,7 @@ var app = express();
 
 var indexRouter = require("./src/routes/index");
 var alunoRouter = require("./src/routes/aluno");
-var cursoRouter = require("./src/routes/curso");
+var avaliarRouter = require("./src/routes/avaliar");
 var progressoRouter = require("./src/routes/progresso");
 
 app.use(express.json());
@@ -21,7 +21,7 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/aluno", alunoRouter);
-app.use("/curso", cursoRouter);
+app.use("/avaliar", avaliarRouter);
 app.use("/progresso", progressoRouter);
 
 app.listen(PORTA, function () {
