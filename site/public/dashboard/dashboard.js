@@ -395,5 +395,8 @@ function cadastrarAvaliacao(card){
 }
 
 function cadastrarPost(){
+    var tituloVar = input_titulo.value;
+    var imgVar = input_img.value;
+
     
 }

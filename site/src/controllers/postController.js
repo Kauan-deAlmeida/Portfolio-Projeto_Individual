@@ -13,12 +13,7 @@ function cadastrarPost(req, res){
         res.status(400).send("Seu img está undefined!");        
     } else{
         // Passe os valores como parâmetro e vá para o arquivo postModel.js
-        postModel.cadastrar(titulo, img)
-            .then(
-                function (resultado) {
-                    var ultimoIdpost = resultado.insertId
-
-                    progressoModel.cadastrarProgresso(ultimoIdpost, 0)
+            progressoModel.cadastrarPost(titulo, img)
                     .then(() => {
                         res.status(201).send("post cadastrado com sucesso")
                     })
@@ -27,8 +22,8 @@ function cadastrarPost(req, res){
                             console.log(erro);
                         }
                     )
-                }
-            ) .catch(
+                
+             .catch(
                 function (erro) {
                     console.log(erro);
                     console.log(

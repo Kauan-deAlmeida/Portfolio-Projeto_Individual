@@ -79,7 +79,7 @@
         } else if(celularVar.length != 11){
             mensagemErro = "Celular invalido, verifique se faltam algum digitos";
             erroCadastrar();
-        } else if(emailVar.indexOf('@') > emailVar.indexOf('.com') || emailVar.endsWith('.com') == false || emailVar.length < 1){
+        } else if(emailVar.indexOf('@') > emailVar.indexOf('.') || emailVar.endsWith('.') == true || emailVar.length < 1){
             mensagemErro = "Email invalido, informe um novo email";
             erroCadastrar();
         } else if(senhaVar.length < 6){

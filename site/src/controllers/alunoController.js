@@ -1,5 +1,6 @@
 var alunoModel = require("../models/alunoModel");
 var progressoModel = require("../models/progressoModel");
+var avaliarModel = require("../models/avaliarModel");
 
 function buscarPorId(req, res){
     var idAluno = req.params.idAluno;
@@ -81,7 +82,17 @@ function cadastrar(req, res){
 
                     progressoModel.cadastrarProgresso(ultimoIdAluno, 0)
                     .then(() => {
-                        res.status(201).send("Aluno cadastrado com sucesso")
+                        res.status(201).send("Progresso cadastrado com sucesso")
+                    })
+                    .catch(
+                        function (erro){
+                            console.log(erro);
+                        }
+                    )
+
+                    avaliarModel.cadastrarAvaliacao(ultimoIdAluno, 0)
+                    .then(() => {
+                        res.status(201).send("Avaliacao cadastrada com sucesso")
                     })
                     .catch(
                         function (erro){
@@ -89,6 +100,7 @@ function cadastrar(req, res){
                         }
                     )
                 }
+                
             ) .catch(
                 function (erro) {
                     console.log(erro);
