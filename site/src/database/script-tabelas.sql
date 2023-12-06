@@ -10,21 +10,12 @@ CREATE DATABASE TeamArt;
 
 USE TeamArt;
 
-CREATE TABLE Curso(
-    idCurso INT PRIMARY KEY AUTO_INCREMENT,
-    titulo VARCHAR(225),
-    descricao VARCHAR(300),
-    data_criacao DATETIME
-);
-
 CREATE TABLE Aluno(
     ra INT PRIMARY KEY AUTO_INCREMENT,
-    nomeAluno VARCHAR(45),
+    nomeAluno VARCHAR(45) NOT NULL,
     celular char(11),
-    email VARCHAR(45),
-    senha VARCHAR(20),
-    fkCurso INT,
-    CONSTRAINT fkIdCurso FOREIGN KEY (fkCurso) REFERENCES Curso(idCurso)
+    email VARCHAR(45) NOT NULL,
+    senha VARCHAR(20) NOT NULL,
 )AUTO_INCREMENT = 1000;
 
 CREATE TABLE ProgressoAluno(
@@ -40,7 +31,7 @@ CREATE TABLE Post(
     fkAluno INT,
     CONSTRAINT fkIdAluno FOREIGN KEY (fkAluno) REFERENCES Aluno (ra),
     Titulo VARCHAR(50),
-    img varchar(2000)
+    img varchar(2000) NOT NULL
 );
 
 CREATE TABLE Avaliacao(

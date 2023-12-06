@@ -323,6 +323,7 @@ body{
         width: 150px;
         height: 23px;
         margin: 10px;
+        padding-left: 10px;
         border-radius: 10px;
         border: solid 1px #000;
     }
@@ -354,6 +355,22 @@ body{
         cursor: pointer;
         padding: 10px;
     }
+}
+
+/* Fechamento */
+
+/* Abertura - Estilizando mensagem de Post realizado */
+
+#cardErro{
+    display: none;
+    padding: 20px;
+    width: 250px;
+    height: 20px;
+    background-color: #fff;
+    border: solid 2px violet;
+    border-radius: 20px;
+    position: absolute;
+    margin-left: 650px;
 }
 
 /* Fechamento */

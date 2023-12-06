@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body onload="mostrarBarra(), mostrarAvaliacao(), perfil()">
+    <div id="cardErro">
+        <span id="mensagem_erro"></span>
+    </div>
     <div class="perfil">
         <div class="usuario">
             <h2>Team Art</h2>
@@ -48,9 +51,9 @@
         
                     <span>RA: <span id="ra_usuario">ra</span></span>
                     <div class="uploadFoto">
-                        Titulo do post: <br><input type="text" id="input_titulo"><br>
-                        URL da imagem: <br><input type="text" id="input_img"><br>
-                        <button onclick="cadastrarImagem()">Enviar</button>
+                        Titulo do post: <br><input type="text" id="input_titulo" placeholder="titulo"><br>
+                        URL da imagem: <br><input type="text" id="input_img" placeholder="https://caminho"><br>
+                        <button onclick="cadastrarPost()">Enviar</button>
                     </div>
                     <div id="avaliacao"></div>
                 </div>
