@@ -46,7 +46,7 @@ CREATE TABLE Post(
 CREATE TABLE Avaliacao(
 	idAvaliacao INT PRIMARY KEY AUTO_INCREMENT,
     nota INT,
-    check (nota = 1 OR nota = 2 OR nota = 3),
+    check (nota = 0 OR nota = 1 OR nota = 2 OR nota = 3 OR nota = 4 OR nota = 5),
     fkAluno INT,
     CONSTRAINT fkRaIdAluno FOREIGN KEY (fkAluno) REFERENCES Aluno (ra)
 );

@@ -321,11 +321,11 @@ function perfil(){
                 <button onclick="cadastrarImagem()">Enviar</button>
             </div>
             <div id="avaliacao">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="1" onclick="cadastrarAvaliacao(this)">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="2" onclick="cadastrarAvaliacao(this)">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="3" onclick="cadastrarAvaliacao(this)">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="4" onclick="cadastrarAvaliacao(this)">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="5" onclick="cadastrarAvaliacao(this)">
+                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="1" onclick="atualizarAvaliacao(this)">
+                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="2" onclick="atualizarAvaliacao(this)">
+                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="3" onclick="atualizarAvaliacao(this)">
+                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="4" onclick="atualizarAvaliacao(this)">
+                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="5" onclick="atualizarAvaliacao(this)">
             </div>
         </div>
 
@@ -346,8 +346,8 @@ function perfil(){
     <div>
     `
 }
-
-function cadastrarAvaliacao(card){
+var notaAvaliacao = 0 
+function atualizarAvaliacao(card){
     var idEstrelas = card.getAttribute("star-id");
     var estrelaDourada = `<img src="../assets/imgs/avaliacao.webp">`
     var estrelaPrata = `<img src="../assets/imgs/avaliacao_N_Marcada.png">`
@@ -359,6 +359,7 @@ function cadastrarAvaliacao(card){
                 ${estrelaPrata}
                 ${estrelaPrata}
             `;
+            notaAvaliacao = 1
     } else if(idEstrelas == 2){
         avaliacao.innerHTML = `
                 ${estrelaDourada}
@@ -367,6 +368,7 @@ function cadastrarAvaliacao(card){
                 ${estrelaPrata}
                 ${estrelaPrata}
             `;
+            notaAvaliacao = 2
     } else if(idEstrelas == 3){
         avaliacao.innerHTML = `
                 ${estrelaDourada}
@@ -375,6 +377,7 @@ function cadastrarAvaliacao(card){
                 ${estrelaPrata}
                 ${estrelaPrata}
             `;
+            notaAvaliacao = 3
     } else if(idEstrelas == 4){
         avaliacao.innerHTML = `
                 ${estrelaDourada}
@@ -383,6 +386,7 @@ function cadastrarAvaliacao(card){
                 ${estrelaDourada}
                 ${estrelaPrata}
             `;
+            notaAvaliacao = 4
     } else{
         avaliacao.innerHTML = `
                 ${estrelaDourada}
@@ -390,8 +394,21 @@ function cadastrarAvaliacao(card){
                 ${estrelaDourada}
                 ${estrelaDourada}
                 ${estrelaDourada}
-            `;                
+            `;     
+            notaAvaliacao = 5           
     }
+
+    fetch(`/avaliar/atualizarAvaliacao/${sessionStorage.ID_USUARIO}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/aluno.js
+            notaServer: notaAvaliacao,
+        })
+    })
 }
 
 function cadastrarPost(){
