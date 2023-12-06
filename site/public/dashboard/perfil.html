@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TeamArt</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body onload="mostrarBarra(), mostrarAvaliacao(), perfil()">
+    <div class="perfil">
+        <div class="usuario">
+            <h2>Team Art</h2>
+            <h2 id="usuario">Olá, <br><span id="nome_usuario_span">Nome Usuario</span></h2>
+            <span class="ra">RA:</span>
+            <span id="ra_usuario_span">ra</span>
+        </div>
+
+        <div class="funcoesCurso">
+            <a href="dashboard.html"><p class="painel" id="inicioUser" onclick="inicio()">Inicio</p></a>
+            <p class="painel" id="descricao" onclick="descricao()">Descrição</p>
+            <p class="painel" id="perfilUser" onclick="perfil()">Perfil</p>
+        </div>
+        <div id="sair">
+            <button onclick="limparSessao()"><p>Sair</p></button>
+        </div>
+    </div>
+            
+    <div id="banner" class="banner">
+        <div class="container">
+            <p>Porcentagem de curso: </p>
+            <span id="porcentagemBarra">0%</span>
+                <div class="barra">
+                    <div class="barraPorcentagem"></div>
+                </div>
+                <div class="mudarCor">
+                    <div class="corFundo" onclick="tema()"></div>
+                </div>
+        </div>
+        <div id="boxes" class="boxes">
+            <div class="boxPerfil">
+                <div class="bannerPerfil">
+                    <div class="fotoPerfil">
+                        <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho09.jpeg">
+                    </div><br>
+                    <span>Nome: <span id="nome_usuario">aluno</span></span><br>
+                    
+                    <span>Email: <span id="email_usuario">email aluno</span></span><br>
+        
+                    <span>RA: <span id="ra_usuario">ra</span></span>
+                    <div class="uploadFoto">
+                        Titulo do post: <br><input type="text" id="input_titulo"><br>
+                        URL da imagem: <br><input type="text" id="input_img"><br>
+                        <button onclick="cadastrarImagem()">Enviar</button>
+                    </div>
+                    <div id="avaliacao"></div>
+                </div>
+        
+                <div class="bannerPostagem">
+                    <div class="fotoPostada">
+                        <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
+                    </div>
+                    <div class="fotoPostada">
+                        <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
+                    </div>
+                    <div class="fotoPostada">
+                        <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
+                    </div>
+                    <div class="fotoPostada">
+                        <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
+                    </div>
+                </div>
+            <div>
+        </div>
+    </div>
+
+<script src="dashboard.js"></script>
+<script src="../js/sessao.js"></script>
+<script src="apiDashboard.js"></script>
+</body>
+</html>
+
+<script>
+    nome_usuario_span.innerHTML = sessionStorage.NOME_USUARIO;
+    ra_usuario_span.innerHTML = sessionStorage.ID_USUARIO;
+</script>

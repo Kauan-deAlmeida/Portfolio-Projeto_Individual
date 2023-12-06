@@ -17,7 +17,16 @@ function atualizarAvaliacao(idAluno, nota){
     return database.executar(instrucao);
 }
 
+function mostrarAvaliacao(idAluno){
+    var instrucao = `
+        select nota from avaliacao where fkAluno = ${idAluno}
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao)
+}
+
 module.exports = {
     cadastrarAvaliacao,
-    atualizarAvaliacao
+    atualizarAvaliacao,
+    mostrarAvaliacao
 };

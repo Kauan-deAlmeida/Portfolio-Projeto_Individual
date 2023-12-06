@@ -302,51 +302,18 @@ function inicio(){
 }
 
 function perfil(){ 
+    onload="mostrarAvaliacao()"
     perfilUser.style.backgroundColor = "rgba(000, 000, 255, 0.2)"
     inicioUser.style.backgroundColor = "rgba(000, 000, 255, 0)"
-    boxes.innerHTML = `
-    <div class="boxPerfil">
-        <div class="bannerPerfil">
-            <div class="fotoPerfil">
-                <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho09.jpeg">
-            </div><br>
-            <span>Nome: <span >${sessionStorage.NOME_USUARIO}</span></span><br>
-            
-            <span>Email: <span>${sessionStorage.EMAIL_USUARIO}</span></span><br>
-
-            <span>RA: <span>${sessionStorage.ID_USUARIO}</span></span>
-            <div class="uploadFoto">
-                Titulo do post: <br><input type="text" id="input_titulo"><br>
-                URL da imagem: <br><input type="text" id="input_img"><br>
-                <button onclick="cadastrarImagem()">Enviar</button>
-            </div>
-            <div id="avaliacao">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="1" onclick="atualizarAvaliacao(this)">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="2" onclick="atualizarAvaliacao(this)">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="3" onclick="atualizarAvaliacao(this)">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="4" onclick="atualizarAvaliacao(this)">
-                <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="5" onclick="atualizarAvaliacao(this)">
-            </div>
-        </div>
-
-        <div class="bannerPostagem">
-            <div class="fotoPostada">
-                <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
-            </div>
-            <div class="fotoPostada">
-                <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
-            </div>
-            <div class="fotoPostada">
-                <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
-            </div>
-            <div class="fotoPostada">
-                <img src="../assets/imgs/Desenhos_do_Sobre_Mim/desenho01.jpeg" alt="">
-            </div>
-        </div>
-    <div>
-    `
+    nome_usuario.innerHTML = `
+            <span >${sessionStorage.NOME_USUARIO}</span><br>`
+    email_usuario.innerHTML = `
+            <span>${sessionStorage.EMAIL_USUARIO}</span><br>`
+    ra_usuario.innerHTML = `
+            <span>${sessionStorage.ID_USUARIO}</span>`
 }
 var notaAvaliacao = 0 
+var estrelaDourada = ``
 function atualizarAvaliacao(card){
     var idEstrelas = card.getAttribute("star-id");
     var estrelaDourada = `<img src="../assets/imgs/avaliacao.webp">`
@@ -409,6 +376,37 @@ function atualizarAvaliacao(card){
             notaServer: notaAvaliacao,
         })
     })
+}
+
+function mostrarAvaliacao(){
+    var idAlunoVar = Number(sessionStorage.ID_USUARIO)
+
+    fetch(`/avaliar/mostrar-avaliacao/${idAlunoVar}`)
+        .then(res => {
+            res.json().then(res => {
+                console.log(res);
+                if(res[0].nota == 0){
+                    avaliacao.innerHTML = `
+                        <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="1" onclick="atualizarAvaliacao(this)">
+                        <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="2" onclick="atualizarAvaliacao(this)">
+                        <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="3" onclick="atualizarAvaliacao(this)">
+                        <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="4" onclick="atualizarAvaliacao(this)">
+                        <img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="5" onclick="atualizarAvaliacao(this)">
+                    `;
+                }
+                else{
+                    for(var estrela = 0; estrela < 5; estrela++){
+                        if(estrela < res[0].nota){
+                            avaliacao.innerHTML += `<img src="../assets/imgs/avaliacao.webp" star-id="${estrela}" onclick="atualizarAvaliacao(this)">`;
+                        }
+                        else{
+                            avaliacao.innerHTML += '<img src="../assets/imgs/avaliacao_N_Marcada.png" star-id="5" onclick="atualizarAvaliacao(this)">'
+                        }
+                    }
+                }
+                
+            })
+        })       
 }
 
 function cadastrarPost(){

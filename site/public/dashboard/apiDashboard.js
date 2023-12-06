@@ -67,7 +67,7 @@ function mostrarBarra(){
                 porcentagemBarra.innerHTML = res[0].progresso + `%`;
                 progresso.setAttribute("style", "width:" + res[0].progresso + "%");
             })
-        })       
+        })    
 }
 
 

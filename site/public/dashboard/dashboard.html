@@ -6,7 +6,7 @@
     <title>Dashboard - TeamArt</title>
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
-<body onload="  mostrarBarra()">
+<body onload="mostrarBarra()">
     <div class="perfil">
         <div class="usuario">
             <h2>Team Art</h2>
@@ -18,12 +18,11 @@
         <div class="funcoesCurso">
             <p class="painel" id="inicioUser" onclick="inicio()">Inicio</p>
             <p class="painel" id="descricao" onclick="descricao()">Descrição</p>
-            <p class="painel" id="perfilUser" onclick="perfil()">Perfil</p>
+            <a href="perfil.html"><p class="painel" id="perfilUser" onclick="perfil()">Perfil</p></a>
         </div>
         <div id="sair">
             <button onclick="limparSessao()"><p>Sair</p></button>
         </div>
-        
     </div>
             
     <div id="banner" class="banner">

@@ -12,4 +12,8 @@ router.put("/atualizarAvaliacao/:idAluno", function(req, res){
     avaliarController.atualizarAvaliacao(req, res);
 })
 
+router.get("/mostrar-avaliacao/:idAluno", function(req, res){
+    avaliarController.mostrarAvaliacao(req, res);
+})
+
 module.exports = router;

@@ -21,7 +21,16 @@ function atualizarAvaliacao(req, res){
     );
 }
 
+function mostrarAvaliacao(req, res){
+    var idAluno = req.params.idAluno;
+
+    avaliarModel.mostrarAvaliacao(idAluno)
+    .then((resultado) => {
+        res.status(200).json(resultado);
+    });
+}
 
 module.exports = {
-    atualizarAvaliacao
+    atualizarAvaliacao,
+    mostrarAvaliacao
 }

@@ -8,8 +8,12 @@ function buscarPorId(idAluno){
 function autenticar(email, senha){
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
     var instrucaoAluno = `
-        SELECT ra, nomeAluno, celular, email, progresso FROM aluno join progressoAluno
-            on ra = fkAluno
+        SELECT ra, nomeAluno, celular, email, progresso, nota
+        FROM aluno as al
+        join progressoAluno as pr
+            on al.ra = pr.fkAluno
+        join avaliacao as av
+            on al.ra = av.fkAluno
          WHERE email = '${email}' AND senha = '${senha}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoAluno);
