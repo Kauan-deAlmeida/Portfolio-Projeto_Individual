@@ -9,6 +9,15 @@ function cadastrarPost(idAluno, titulo, img){
     return database.executar(instrucao)
 }
 
+function mostrarPost(idAluno){
+    var instrucao = `
+        select img from post where fkAluno = ${idAluno}
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao)
+}
+
 module.exports = {    
-    cadastrarPost
+    cadastrarPost,
+    mostrarPost
 };

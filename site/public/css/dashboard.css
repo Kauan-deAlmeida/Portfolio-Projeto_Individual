@@ -288,18 +288,17 @@ body{
     filter: brightness(60%);
 }
 
-.boxes .boxPerfil .bannerPostagem{
+.boxes .boxPerfil #bannerPostagem{
     width: 60%;
     height: 85%;
     margin: 50px 0 0 10px;
-    display: flex;
     border-right: solid 3px #000;
     overflow: scroll;
     overflow-x: hidden;
 }
 
-.boxes .boxPerfil .bannerPostagem .fotoPostada{
-    width: 150px;
+.boxes .boxPerfil #bannerPostagem .fotoPostada{
+    width: 25%;
     height: 200px;
     padding: 10px;
     /* background-color: #000; */

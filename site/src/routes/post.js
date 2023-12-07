@@ -8,8 +8,8 @@ router.post("/cadastrarPost", function (req, res){
     postController.cadastrarPost(req, res);
 })
 
-// router.get("/buscar/:id", function (req, res){
-//     postController.buscarPorId(req, res);
-// })
+router.get("/mostrarPost/:idAlunoVar", function (req, res){
+    postController.mostrarPost(req, res);
+})
 
 module.exports = router;

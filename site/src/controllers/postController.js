@@ -37,6 +37,16 @@ function cadastrarPost(req, res){
     }
 }
 
+function mostrarPost(req, res){
+    var idAluno = req.params.idAlunoVar;
+
+    postModel.mostrarPost(idAluno)
+    .then((resultado) => {
+        res.status(200).json(resultado);
+    });
+}
+
 module.exports = {
-    cadastrarPost
+    cadastrarPost,
+    mostrarPost
 }

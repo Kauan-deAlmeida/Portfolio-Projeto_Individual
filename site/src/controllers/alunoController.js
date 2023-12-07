@@ -36,7 +36,7 @@ function autenticar(req, res){
                                         email: resultAutenticar[0].email,
                                         senha: resultAutenticar[0].senha,
                                         progresso: resultAutenticar[0].progresso,
-                                        nota: resultAutenticar[0].nota
+                                        nota: resultAutenticar[0].nota,
                                     });
                                 } else{
                                     res.status(204).json({ curso:[]});

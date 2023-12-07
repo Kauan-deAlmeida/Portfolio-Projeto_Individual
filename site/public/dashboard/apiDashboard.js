@@ -67,7 +67,8 @@ function mostrarBarra(){
                 porcentagemBarra.innerHTML = res[0].progresso + `%`;
                 progresso.setAttribute("style", "width:" + res[0].progresso + "%");
             })
-        })    
+        })   
+    
 }
 
 // O usuário irá dar avaliação do curso
@@ -206,11 +207,13 @@ function cadastrarPost(){
         console.log(`#ERRO: ${resposta}`);
         finalizarAguardar();
     });    
+    
 }
 
 function sumirMensagem() {
     cardErro.style.display = "none";
-}
+    window.location = "../dashboard/perfil.html"
+}   
 
 function erroCadastrar(){
     cardErro.style.display = "block";
@@ -219,6 +222,8 @@ function erroCadastrar(){
     finalizarAguardar();
     return false;
 }
+
+
 
 
     

@@ -311,5 +311,29 @@ function perfil(){
             <span>${sessionStorage.EMAIL_USUARIO}</span><br>`
     ra_usuario.innerHTML = `
             <span>${sessionStorage.ID_USUARIO}</span>`
+    mostrarPost()    
 }
 
+var idAlunoVar = sessionStorage.ID_USUARIO
+function mostrarPost(){
+    fetch(`/post/mostrarPost/${idAlunoVar}`)
+        .then(res => {
+            res.json().then(res => {
+                console.log(res);                  
+                for(var i = 0; i < res.length; i++){
+                    sessionStorage.setItem(`imagens:${i+1}`, res[i].img)
+                    bannerPostagem.innerHTML += `<div class="fotoPostada"><img src="${sessionStorage.getItem(`imagens:${i+1}`)}"></div>`
+                    if(i%4 == 0){
+                        bannerPostagem.innerHTML += `<br>`
+                    }
+                }     
+            })
+        })    
+}
+
+let lista = [{
+    img: 1
+},
+{
+    img: 2
+}]
