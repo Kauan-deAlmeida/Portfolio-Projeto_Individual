@@ -25,8 +25,16 @@ function mostrarAvaliacao(idAluno){
     return database.executar(instrucao)
 }
 
+function mostrarChartEstrela(){
+    var instrucao = `
+        select * from vw_qtdEstrelas;
+    `
+    return database.executar(instrucao);
+}
+
 module.exports = {
     cadastrarAvaliacao,
     atualizarAvaliacao,
-    mostrarAvaliacao
+    mostrarAvaliacao,
+    mostrarChartEstrela
 };

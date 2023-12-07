@@ -27,10 +27,24 @@ function mostrarAvaliacao(req, res){
     avaliarModel.mostrarAvaliacao(idAluno)
     .then((resultado) => {
         res.status(200).json(resultado);
-    });
+    })
+    .catch(function (erro){
+        res.status(500).json(erro.sqlMessage)
+    })
+}
+
+function mostrarChartEstrela(req, res){
+    avaliarModel.mostrarChartEstrela()
+    .then(function (resultado){
+        res.status(200).json(resultado)
+    })
+    .catch(function (erro){
+        res.status(500).json(erro.sqlMessage)
+    })
 }
 
 module.exports = {
     atualizarAvaliacao,
-    mostrarAvaliacao
+    mostrarAvaliacao,
+    mostrarChartEstrela
 }

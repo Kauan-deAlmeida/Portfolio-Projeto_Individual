@@ -330,10 +330,3 @@ function mostrarPost(){
             })
         })    
 }
-
-let lista = [{
-    img: 1
-},
-{
-    img: 2
-}]

@@ -16,4 +16,8 @@ router.get("/mostrar-avaliacao/:idAluno", function(req, res){
     avaliarController.mostrarAvaliacao(req, res);
 })
 
+router.get("/mostrarChart", function(req, res){
+    avaliarController.mostrarChartEstrela(req, res);
+})
+
 module.exports = router;
